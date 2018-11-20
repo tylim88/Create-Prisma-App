@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "graphql_prisma_backend_boilerplate",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/tylim88/Graphql-Prisma-BackEnd-Boilerplate.git"
+  },
   "scripts": {
     "start": "node dist/index.js",
     "start-local": "env-cmd ./config/dev.env node dist/index.js",
