@@ -16,8 +16,7 @@
     "deploy-prod": "prisma deploy ./prisma -e ./config/prod.env",
     "deploy-test": "prisma deploy ./prisma -e ./config/test.env",
     "docker-down": "docker-compose -f ./prisma/docker-compose.yml down",
-    "docker-up": "env-cmd ./config/dev.env docker-compose -f ./prisma/docker-compose.yml up -d",
-    "hello": "nodemon -h"
+    "docker-up": "env-cmd ./config/dev.env docker-compose -f ./prisma/docker-compose.yml up -d"
   },
   "jest": {
     "globalSetup": "./tests/jest/globalSetup.js",
