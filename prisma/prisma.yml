@@ -1,0 +1,7 @@
+endpoint: ${env:PRISMA_ENDPOINT}
+datamodel: ${env:DATAMODEL}
+secret: ${env:PRISMA_SECRET}
+
+generate:
+  - generator: graphql-schema
+    output: ${env:OUTPUT_FOLDER}

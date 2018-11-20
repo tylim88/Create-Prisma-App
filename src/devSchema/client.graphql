@@ -1,0 +1,60 @@
+# import UserOrderByInput from './prisma.graphql'
+
+type Query {
+  users(
+    query: String
+    first: Int
+    skip: Int
+    after: String
+    orderBy: UserOrderByInput
+  ): [User!]!
+  me: User!
+}
+
+type Mutation {
+  createUser(data: CreateUserInput!): AuthPayload!
+  login(data: LoginUserInput!): AuthPayload!
+  deleteUser: User!
+  updateUser(data: UpdateUserInput!): User!
+}
+
+# type Subscription {
+
+# }
+
+type AuthPayload {
+  token: String!
+  user: User!
+}
+
+input CreateUserInput {
+  name: String!
+  email: String!
+  password: String!
+}
+
+input LoginUserInput {
+  email: String!
+  password: String!
+}
+
+input UpdateUserInput {
+  name: String
+  email: String
+  password: String
+}
+
+type User {
+  id: ID!
+  name: String!
+  email: String
+  password: String!
+  updatedAt: String!
+  createdAt: String!
+}
+
+enum MutationType {
+  CREATED
+  UPDATED
+  DELETED
+}
