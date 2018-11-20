@@ -1,7 +1,7 @@
 {
-  "name": "graphql-basics",
+  "name": "graphql_prisma_backend_boilerplate",
   "version": "1.0.0",
-  "description": "Graphql-Prisma-BackEnd-Boilerplate",
+  "description": "graphql_prisma_backend_boilerplate",
   "main": "index.js",
   "scripts": {
     "start": "node dist/index.js",
