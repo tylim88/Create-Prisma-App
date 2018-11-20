@@ -10,16 +10,18 @@
   "scripts": {
     "start": "node dist/index.js",
     "start-local": "env-cmd ./config/dev.env node dist/index.js",
-    "heroku-postbuild": "babel src --out-dir dist --copy-files && rm -r dist/prodSchema && rm -r dist/devSchema && rm -r dist/testSchema",
+    "build": "babel src --out-dir dist --copy-files && rm -r dist/prodSchema && rm -r dist/devSchema && rm -r dist/testSchema",
+    "heroku-postbuild": "npm run build",
     "dev": "env-cmd ./config/dev.env nodemon src/index.js --ext js,graphql --exec babel-node",
     "test": "env-cmd ./config/test.env jest --watch --runInBand",
+    "test-remote": "env-cmd ./config/prod.env jest --watch --runInBand",
     "get-schema-dev": "prisma generate ./prisma -e ./config/dev.env",
     "get-schema-prod": "prisma generate ./prisma -e ./config/prod.env",
     "get-schema-test": "prisma generate ./prisma -e ./config/test.env",
     "deploy-dev": "prisma deploy ./prisma -e ./config/dev.env",
     "deploy-prod": "prisma deploy ./prisma -e ./config/prod.env",
     "deploy-test": "prisma deploy ./prisma -e ./config/test.env",
-    "docker-down": "docker-compose -f ./prisma/docker-compose.yml down",
+    "docker-down": "env-cmd ./config/dev.env docker-compose -f ./prisma/docker-compose.yml down",
     "docker-up": "env-cmd ./config/dev.env docker-compose -f ./prisma/docker-compose.yml up -d"
   },
   "jest": {

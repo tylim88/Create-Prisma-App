@@ -14,9 +14,10 @@ jobs:
       - image: circleci/node:8.12
     steps:
       - checkout
-      - run: echo "testing stuff"
+      - run: echo "npm installing"
       - run: npm install
-      - run: npm test
+      - run: echo "test-remote"
+      - run: npm test-remote
 workflows:
   version: 2
   build_test_and_lint: # workflow name
