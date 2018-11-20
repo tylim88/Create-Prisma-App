@@ -16,8 +16,7 @@
     "deploy-prod": "prisma deploy ./prisma -e ./config/prod.env",
     "deploy-test": "prisma deploy ./prisma -e ./config/test.env",
     "docker-down": "docker-compose -f ./prisma/docker-compose.yml down",
-    "docker-up": "env-cmd ./config/dev.env docker-compose -f ./prisma/docker-compose.yml up -d",
-    "precommit": "pretty-quick --staged"
+    "docker-up": "env-cmd ./config/dev.env docker-compose -f ./prisma/docker-compose.yml up -d"
   },
   "jest": {
     "globalSetup": "./tests/jest/globalSetup.js",
@@ -69,5 +68,10 @@
     "trailingComma": "es5",
     "semi": false,
     "arrowParens": "always"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "pretty-quick --staged"
+    }
   }
 }

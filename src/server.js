@@ -6,7 +6,9 @@ const pubsub = new PubSub()
 
 const server = new GraphQLServer({
   typeDefs: process.env.CLIENT_SCHEMA,
+
   resolvers,
+
   context(request) {
     return {
       pubsub,
