@@ -8,7 +8,7 @@ jobs:
       - run: echo "npm installing" # encho = printout
       - run: npm install
       - run: echo "npm run heroku-postbuild"
-      - run: CI=true npm run heroku-postbuild # CI=true define env variable CI = true
+      - run: CI=true npm run heroku-postbuild # example:CI=true inject env variable CI = true
   test:
     docker:
       - image: circleci/node:8.12
