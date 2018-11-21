@@ -13,6 +13,7 @@
     "build": "babel src --out-dir dist --copy-files && rm -r dist/prodSchema && rm -r dist/devSchema && rm -r dist/testSchema",
     "heroku-postbuild": "npm run build",
     "dev": "env-cmd ./config/dev.env nodemon src/index.js --ext js,graphql --exec babel-node",
+    "test-ci": "env-cmd ./config/test.env jest --runInBand",
     "test": "env-cmd ./config/test.env jest --watch --runInBand",
     "get-schema-dev": "prisma generate ./prisma -e ./config/dev.env",
     "get-schema-prod": "prisma generate ./prisma -e ./config/prod.env",
