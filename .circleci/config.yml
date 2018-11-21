@@ -17,7 +17,7 @@ jobs:
       - run: echo "npm installing"
       - run: npm install
       - run: echo "test-remote"
-      - run: npm run test-ci
+      - run: npm run test-ci # 1
 workflows:
   version: 2
   build_test_and_lint: # workflow name
