@@ -1,7 +1,7 @@
 {
-  "name": "backend",
+  "name": "graphql_prisma_backend_boilerplate",
   "version": "1.0.0",
-  "description": "backend",
+  "description": "graphql_prisma_backend_boilerplate",
   "main": "index.js",
   "repository": {
     "type": "git",
