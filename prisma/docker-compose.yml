@@ -15,14 +15,14 @@ services:
         databases:
           default:
             connector: postgres
-            host: ${PSQL_HOST}
+            host: ${PSQL_HOST} # value is host.docker.internal, you will connect with psql though docker's host(the real localhost)
             port: ${PSQL_PORT}
             database: ${PSQL_DATABASE}
             ssl: ${PSQL_SSL} 
             user: ${PSQL_USER}
             password: ${PSQL_PASSWORD}
             migrations: true
-  postgres:
+  postgres: # you dont need this if you are not plan to run psql in container
     container_name: postgres
     image: postgres
     environment:
@@ -32,8 +32,3 @@ services:
       POSTGRES_HOST: ${PSQL_HOST}
     ports:
       - '${PSQL_PORT}:5432'
-    volumes: # if you are window user, currently it is impossible to mount psql storage to window drive, you can only use container storage https://github.com/docker/for-win/issues/445
-      - postgres_database:/var/lib/postgresql/data
-volumes:
-  postgres_database:
-    external: true
