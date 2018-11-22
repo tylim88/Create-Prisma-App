@@ -1,22 +1,34 @@
+# if we host prima server in prisma.io, then this docker-compose is for dev purpose only
+
 version: '3'
 services:
   prisma:
     image: prismagraphql/prisma:1.13.4
     restart: always
     ports:
-      - '4466:4466'
+      - '${PRISMA_PORT}:${PRISMA_PORT}'
     environment:
       PRISMA_CONFIG: |
-        port: 4466
+        port: ${PRISMA_PORT}
         # uncomment the next line and provide the env var PRISMA_MANAGEMENT_API_SECRET=my-secret to activate cluster security
         # managementApiSecret: my-secret
         databases:
           default:
             connector: postgres
-            host: ${HOST}
-            port: ${PORT}
-            database: ${DATABASE}
-            ssl: true 
-            user: ${USER}
-            password: ${PASSWORD}
+            host: ${PSQL_HOST}
+            port: ${PSQL_PORT}
+            database: ${PSQL_DATABASE}
+            ssl: ${PSQL_SSL} 
+            user: ${PSQL_USER}
+            password: ${PSQL_PASSWORD}
             migrations: true
+  postgres:
+    container_name: postgres
+    image: postgres
+    environment:
+      POSTGRES_USER: ${PSQL_USER}
+      POSTGRES_PASSWORD: ${PSQL_PASSWORD}
+      POSTGRES_DB: ${PSQL_DATABASE}
+      POSTGRES_HOST: ${PSQL_HOST}
+    ports:
+      - '${PSQL_PORT}:5432'
