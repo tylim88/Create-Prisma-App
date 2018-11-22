@@ -1,3 +1,4 @@
+# circle ci env var is same as test.env
 version: 2
 jobs:
   build:
