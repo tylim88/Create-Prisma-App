@@ -40,7 +40,7 @@
     "apollo-link-http": "^1.5.5",
     "apollo-link-ws": "^1.0.9",
     "apollo-utilities": "^1.0.25",
-    "bcryptjs": "^2.4.3",
+    "bcrypt": "^3.0.2",
     "cross-fetch": "^2.2.3",
     "graphql": "^0.13.2",
     "graphql-yoga": "^1.16.7",

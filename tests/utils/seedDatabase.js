@@ -1,4 +1,4 @@
-import bcrypt from 'bcryptjs'
+import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
 import prisma from '../../src/prismaBinding'
 
@@ -6,7 +6,7 @@ const userOne = {
   input: {
     name: 'Jen',
     email: 'jen@example.com',
-    password: bcrypt.hashSync('Red098!@#$'),
+    password: bcrypt.hashSync('Red098!@#$', bcrypt.genSaltSync(10)),
   },
   user: undefined,
   jwt: undefined,
@@ -16,7 +16,7 @@ const userTwo = {
   input: {
     name: 'Jeff',
     email: 'jeff@example.com',
-    password: bcrypt.hashSync('PassForJeff'),
+    password: bcrypt.hashSync('PassForJeff', bcrypt.genSaltSync(10)),
   },
   user: undefined,
   jwt: undefined,
