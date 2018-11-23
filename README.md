@@ -1,6 +1,6 @@
 # README
 
-Why I create this boilerplate and spending time to improve it, it is just a boilerplate right?
+Why spending time perfecting this boilerplate, isn't it just a boilerplate?
 
 To understand this let us look at the environments we working in, in general there are 3 types of environments:
 
@@ -17,7 +17,7 @@ As we can see we have 3 environments and setting up all the environments can be 
 
 If the environments are too complicated to setup, it take away our attention from REAL engineering problem, I remember in my first job, we spent 80% of the time just to pick up the tool (if you are curious, it was Siemens software and Siemens is infamous for not so user friendly software).
 
-Hence this motivate me to create and maintain a boilerplate, so that any newcomer that join the project can work on the code with minimum setting. When creating a boilerplate, alway put the team in mind, even if we are alone, we should do this because boilerplate that is convenient for a team definitely convenient for one man army.
+Hence this motivate me to create and maintain well structured boilerplate, so that any newcomer that join the project can work on the code with minimum configuration. When we creating a boilerplate, alway put the team in mind, even if we are working alone, we also should do this because boilerplate that is convenient for a team definitely convenient for one man army too.
 
 The objective of this boilerplate is you should able to run it with just installing docker and use npm script to run command.
 
