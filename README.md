@@ -32,7 +32,7 @@ What you need to install:
 2. Kitematic(optional): Docker GUI
 3. TeamSQL(optional): SQL database GUI
 
-With or without Kitematic and TeamSQL, we still able to get the app running, but I strongly recommend them because they are a powerful utility
+With or without Kitematic and TeamSQL, we still able to get the app running, but I strongly recommend them because they are powerful utility
 
 Here is instruction to get running:
 
