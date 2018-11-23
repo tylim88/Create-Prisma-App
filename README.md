@@ -44,10 +44,10 @@ Did I mention this boilerplate also comes with:
 
 1. commit hooked prettier styling
 2. Babel env preset
-3. basic datamodel
+3. basic data model
 4. basic schema
 5. basic api call
-6. basic test
+6. basic test (include subscription test)
 7. basic CircleCI configuration file
 8. basic JWT authentication
 
