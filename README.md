@@ -36,7 +36,7 @@ With or without Kitematic and TeamSQL, we still able to get the app running, but
 
 Here is instruction to get running:
 
-1. in the command line: npm run setup-dev
+1. in the command line: npm run setup-dev-win (mac user can try npm run setup-dev, unfortunately I don't have mac so I cant test it out)
 
 And BOOM, with just one script, our graphql playground is up and running, waiting for us to explore!
 

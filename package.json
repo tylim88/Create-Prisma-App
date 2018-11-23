@@ -8,7 +8,8 @@
     "url": "https://github.com/tylim88/Graphql-Prisma-BackEnd-Boilerplate.git"
   },
   "scripts": {
-    "setup-dev": "npm run docker-volume && npm run docker-up && npm run deploy-dev && npm run token-dev",
+    "setup-dev": "source ./.config/dev.env ; docker volume create $DOCKER_VOLUME ; npm run docker-up ; npm run deploy-dev ; npm run token-dev",
+    "setup-dev-win": "npm run docker-volume && npm run docker-up && npm run deploy-dev && npm run token-dev",
     "docker-volume-core": "source ./.config/dev.env ; docker volume create $DOCKER_VOLUME ; npm config delete script-shell",
     "docker-volume": "npm config set script-shell \"C:\\Program Files\\git\\bin\\bash.exe\" && npm run docker-volume-core",
     "start": "node dist/index.js",
