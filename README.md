@@ -53,8 +53,8 @@ Did I mention this boilerplate also comes with:
 
 Note: npm run setup is for first time setup only, please explore other scripts to run the command you need.
 Note1: if you are facing port is already allocated error, it is most likely you have postgres installed and running with 5433 port, change PSQL_PORT in ./config/dev.env
-Note2: to shut down container: npm run docker-down
+Note2: to shut down container: npm run docker-down.
 
-I am perfecting one click deploy to heroku, stay tuned
+I am researching one command deploy to heroku, stay tuned.
 
-Lastly, credit for Udemy instructor Andrew Mead, this boilerplate is heavily modified version of Andrew's boilerplate
+Lastly, credit for Udemy instructor Andrew Mead, this boilerplate is heavily modified version of Andrew's boilerplate.
