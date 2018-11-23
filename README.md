@@ -8,9 +8,7 @@ To understand this let us look at the environments we working in, in general the
    Ideally dev is an environment that allow us to code and experimenting our thing even without internet. It is an environment that we can carry on planning and creating without relying third party service such as server on AWS, instead we should have a server that we can toy with anytime in our computer.
 
 2. prod
-   Prod is the environment where we want to treat our data, data model and configuration delicately. Imagine if we accidentally deploy our dev data and configuration into prod, that would be hell unleashed.
-
-For some cases we can mix up test and dev environments and that is tolerable, but production environment MUST has it own space, this is not an option.
+   Prod is the environment where we want to treat our data, data model and configuration delicately. Imagine if we accidentally deploy our dev data and configuration into prod, that would be hell unleashed.For some cases we can mix up test and dev environments and that is tolerable, but production environment MUST has it own space, this is not an option.
 
 3. test
    Ideally the test environment should be as similar as prod environment as possible so that we can expect the same behavior when we deploy it. We might need to mock some module if the test is too slow.
