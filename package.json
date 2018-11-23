@@ -8,6 +8,9 @@
     "url": "https://github.com/tylim88/Graphql-Prisma-BackEnd-Boilerplate.git"
   },
   "scripts": {
+    "setup-dev": "npm run docker-volume && npm run docker-up && npm run deploy-dev && npm run token-dev",
+    "docker-volume-core": "source ./.config/dev.env ; docker volume create $DOCKER_VOLUME ; npm config delete script-shell",
+    "docker-volume": "npm config set script-shell \"C:\\Program Files\\git\\bin\\bash.exe\" && npm run docker-volume-core",
     "start": "node dist/index.js",
     "start-local": "env-cmd ./.config/dev.env node dist/index.js",
     "build": "babel src --out-dir dist --copy-files && rm -r dist/prodSchema && rm -r dist/devSchema && rm -r dist/testSchema",
@@ -21,6 +24,9 @@
     "deploy-dev": "prisma deploy -e ./.config/dev.env",
     "deploy-prod": "prisma deploy -e ./.config/prod.env",
     "deploy-test": "prisma deploy -e ./.config/test.env",
+    "token-dev": "prisma token  -e ./.config/dev.env",
+    "token-prod": "prisma token -e ./.config/prod.env",
+    "token-test": "prisma token -e ./.config/test.env",
     "docker-down": "env-cmd ./.config/dev.env docker-compose -f ./prisma/docker-compose.yml down",
     "docker-up": "env-cmd ./.config/dev.env docker-compose -f ./prisma/docker-compose.yml up -d"
   },
@@ -61,7 +67,8 @@
     "nodemon": "^1.18.6",
     "prettier": "^1.15.2",
     "pretty-quick": "^1.8.0",
-    "prisma": "^1.20.7"
+    "prisma": "^1.20.7",
+    "shx": "^0.3.2"
   },
   "babel": {
     "presets": [

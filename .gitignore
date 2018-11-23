@@ -1,3 +1,4 @@
 node_modules/
-.config/
+.config/prod.env
+.config/test.env
 dist/

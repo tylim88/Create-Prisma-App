@@ -1,6 +1,4 @@
-# if we host prima server in prisma.io, then this docker-compose is for dev purpose only
-
-version: '3'
+version: '3.7'
 services:
   prisma:
     image: prismagraphql/prisma:1.13.4
@@ -33,7 +31,8 @@ services:
     ports:
       - '${PSQL_PORT}:5432'
     volumes: # if you are window user, currently it is impossible to mount psql storage to window drive, you can only use container storage https://github.com/docker/for-win/issues/445
-      - postgres_database:/var/lib/postgresql/data
+      - postgres_volume:/var/lib/postgresql/data
 volumes:
-  postgres_database:
+  postgres_volume:
+    name: ${DOCKER_VOLUME}
     external: true
