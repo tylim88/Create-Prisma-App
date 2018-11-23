@@ -21,10 +21,10 @@ Hence this motivate me to create and maintain well structured boilerplate, so th
 
 The objective of this boilerplate is you should able to run it with just installing docker and use npm script to run command.
 
-Prerequisite:
+Prerequisite knowledge:
 
-1. You know Graphql
-2. You know Prisma library
+1. Graphql
+2. Prisma library
 
 What you need to install:
 
