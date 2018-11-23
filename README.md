@@ -40,6 +40,17 @@ Here is instruction to get running:
 
 And BOOM, with just one script, our graphql playground is up and running, waiting for us to explore!
 
+Did I mention this boilerplate also comes with:
+
+1. commit hooked prettier styling
+2. Babel env preset
+3. basic datamodel
+4. basic schema
+5. basic api call
+6. basic test
+7. basic CircleCI configuration file
+8. basic JWT authentication
+
 Note: npm run setup is for first time setup only, please explore other scripts to run the command you need.
 Note1: if you are facing port is already allocated error, it is most likely you have postgres installed and running with default port, change PSQL_PORT in ./config/dev.env
 Note2: to shut down container: npm run docker-down
