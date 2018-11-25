@@ -1,5 +1,7 @@
 # README
 
+_credit for Udemy instructor Andrew Mead, this boilerplate is modified version of Andrew's boilerplate._
+
 Why spending time perfecting this boilerplate, isn't it just a boilerplate?
 
 To understand this let us look at the environments we working in, in general there are 3 types of environments:
@@ -36,9 +38,11 @@ With or without Kitematic and TeamSQL, we still able to get the app running, but
 
 Here is instruction to get running:
 
-1. in the command line: npm run setup-dev-win (mac user can try npm run setup-dev, unfortunately I don't have mac so I cant test it out)
+1. to get dev up and run: npm run dev-setup
 
-And BOOM, with just one script, our graphql playground is up and running, waiting for us to explore!
+And BOOM, with just one script, our dev environment graphql playground is up and running, waiting for us to explore!
+
+We can also npm run test-setup to launch test-environment, it is a docker composed of even the node server.
 
 Did I mention this boilerplate also comes with:
 
@@ -51,10 +55,8 @@ Did I mention this boilerplate also comes with:
 7. basic CircleCI configuration file
 8. basic JWT authentication
 
-Note: npm run setup is for first time setup only, please explore other scripts to run the command you need.
-Note1: if you are facing port is already allocated error, it is most likely you have postgres installed and running with 5433 port, change PSQL_PORT in ./config/dev.env
-Note2: to shut down container: npm run docker-down.
+- npm run setup is for first time setup only, please explore other scripts to run the command you need.
+- if you are facing port is already allocated error, it is most likely you have postgres installed and running with 5433 port, change PSQL_PORT in ./config/dev.env
+- to shut down container: npm run docker-down.
 
-I am researching one command deploy to heroku, stay tuned.
-
-Lastly, credit for Udemy instructor Andrew Mead, this boilerplate is heavily modified version of Andrew's boilerplate.
+I am perfecting the logic, stay tuned.
