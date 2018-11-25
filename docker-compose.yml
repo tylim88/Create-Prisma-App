@@ -41,16 +41,6 @@ services:
     container_name: node
     build: ./
     command: ${COMMAND}
-    environment:
-      PRISMA_IP: ${PRISMA_IP}
-      PRISMA_SECRET: ${PRISMA_SECRET}
-      JWT_SECRET: ${JWT_SECRET}
-      DATAMODEL: ${DATAMODEL}
-      PRISMA_SCHEMA: ${PRISMA_SCHEMA}
-      CLIENT_SCHEMA: ${CLIENT_SCHEMA}
-      OUTPUT_FOLDER: ${OUTPUT_FOLDER}
-      PRISMA_PORT: ${PRISMA_PORT}
-      ENV: ${ENV}
     ports:
       - '${NODE_PORT}:${NODE_PORT}'
 
