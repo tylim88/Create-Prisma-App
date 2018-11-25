@@ -44,6 +44,8 @@ And BOOM, with just one script, our dev environment graphql playground is up and
 
 We can also npm run test-setup to launch test-environment, it is a docker composed of even the node server.
 
+we need to create the test.env and prod.env ourself, because everyone has different prod and test, both env file is very similar to dev.env, please refer to ./config/dev.env for guidelines
+
 Did I mention this boilerplate also comes with:
 
 1. commit hooked prettier styling
