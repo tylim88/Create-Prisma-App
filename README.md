@@ -103,7 +103,7 @@ and here is another catch, we run jest in dev environment with test environment 
     "prod-setup": "npm run prod-build && npm run prod-up && node ./terminalString/dev.js", build and orchestrate containers
     "prod-start": "npm run wait-prisma && npm run prod-deploy && env-cmd ./.config/prod.env npm run start", deploy and generate schema, start nodejs
     "prod-deploy": "env-cmd ./.config/prod.env npm run deploy && npm run prod-schema", deploy and generate schema
-    "prod-schema": "env-cmd ./.config/prod.env prisma generate", generate prisma schema
+    "prod-schema": "env-cmd ./.config/prod.env npm run schema", generate prisma schema
     "prod-token": "env-cmd ./.config/prod.env npm run token", generate prisma token
     "prod-build": "env-cmd ./.config/prod.env npm run dbuild", build containers
     "prod-rebuild": "env-cmd ./.config/prod.env npm run rebuild", build containers with no cache
@@ -114,7 +114,7 @@ and here is another catch, we run jest in dev environment with test environment 
     "test-setup": "npm run test-build && npm run test-up && node ./terminalString/test.js && npm run wait-prisma && env-cmd ./.config/test.env npm run playground", build, orchestrate containers and open nodejs endpoint in browser
     "test-start": "npm run wait-prisma && npm run test-deploy && env-cmd ./.config/test.env npm run start", deploy and generate schema, start nodejs
     "test-deploy": "env-cmd ./.config/test.env npm run deploy && npm run test-schema", deploy and generate schema
-    "test-schema": "env-cmd ./.config/test.env prisma generate", generate prisma schema
+    "test-schema": "env-cmd ./.config/test.env npm run schema", generate prisma schema
     "test-token": "env-cmd ./.config/test.env npm run token", generate prisma token
     "test-build": "env-cmd ./.config/test.env npm run dbuild", build containers
     "test-rebuild": "env-cmd ./.config/test.env npm run rebuild", build containers with no cache
@@ -129,7 +129,7 @@ and here is another catch, we run jest in dev environment with test environment 
     "dev-jest": "env-cmd ./.config/test.env npm run jest", run jest
     "dev-nodemon": "env-cmd ./.config/dev.env nodemon src/index.js --ext js,graphql --exec babel-node", start nodejs in nodemon with babel, watch js and graphql file change
     "dev-deploy": "env-cmd ./.config/dev.env npm run deploy && npm run dev-schema", deploy and generate schema
-    "dev-schema": "env-cmd ./.config/dev.env prisma generate", generate prisma schema
+    "dev-schema": "env-cmd ./.config/dev.env npm run schema", generate prisma schema
     "dev-token": "env-cmd ./.config/dev.env npm run token", generate prisma token
     "dev-build": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml build", build containers
     "dev-rebuild": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml build --no-cache", build containers with no cache
