@@ -51,7 +51,7 @@ with just one script, our dev environment graphql playground is up and running, 
 
 We can also npm run test-setup to launch test-environment, it is a docker composed of even the node server.
 
-we need to create the test.env and prod.env ourself, because everyone has different prod and test, both env file is very similar to dev.env, please refer to ./config/dev.env for guidelines
+we need to create the prod.env ourself, it can be easily done by using test.env which is provided as template, please refer to ./config/dev.env for guidelines
 
 Did I mention this boilerplate also comes with:
 
@@ -83,6 +83,8 @@ prod,test and dev is script is derived from basic script, so that we can standar
 When come to applications, prod and test are exactly the same, they both dockerize the nodejs and prisma, dev on the other hand only prisma in the container(prisma currently can only run in docker container). The reason behind this architecure is simple, we shouldn't be developing in container environment, we should only dockerize when we want to deliver it, plus develope in container environment add difficulty and slow down the development. Jest in the other hand mimic real world interaction and act upon test environment.
 
 Docker refuse to add key that allows user to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a new yml file for dev, yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building node every time is not ideal for dev.
+
+Please study ./config/dev.env for better understanding on how environment variable works
 
     "separator-0": "-----------------------------------------------------basic-----------------------------------------------------------------------",
     "start": "npm run build && node dist/index.js", build the code and start nodejs,
