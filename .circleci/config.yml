@@ -3,7 +3,7 @@ version: 2
 jobs:
   build:
     docker:
-      - image: circleci/node:8.9
+      - image: circleci/node:8.12
     steps:
       - checkout
       - run: echo "npm installing" # encho = printout
