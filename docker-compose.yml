@@ -24,6 +24,7 @@ services:
 
   node:
     container_name: node
+    restart: always
     build: ./
     command: ${COMMAND}
     ports:
