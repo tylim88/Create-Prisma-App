@@ -47,7 +47,7 @@ Here is instruction to get running:
 
 1. to get dev up and run: npm run dev-setup
 
-And BOOM, with just one script, our dev environment graphql playground is up and running, waiting for us to explore!
+with just one script, our dev environment graphql playground is up and running, waiting for us to explore!
 
 We can also npm run test-setup to launch test-environment, it is a docker composed of even the node server.
 
@@ -66,22 +66,23 @@ Did I mention this boilerplate also comes with:
 
 - npm run setup is for first time setup only, please explore other scripts to run the command you need(see documentation).
 - if you are facing port is already allocated error, it is most likely you have postgres installed and running with 5433 port, change PSQL_PORT in ./config/dev.env
-- to shut down container: npm run docker-down.
+- to shut down container: npm run xxxx-down (xxx is dev or test or prod)
 
 ## Doc
 
-The scripts is extended to 4 parts:
+The scripts is extended to 5 parts:
 
 - basic
+- jest
 - prod
 - test
 - dev
 
-prod,test and dev is script is derived from basic script, so that we can standardize how the script run. The scripts are mostly structured in the same: prod and test scripts have 99% of similarity, the 1% is test-setup will open server endpoint in browser when it is ready (it will fails to open the browser in Ubuntu but it does no harm) while prod-setup will not; dev has slightly more scripts and much loosely structured so that you can develope with more flexible scripts.
+prod,test and dev is script is derived from basic script, so that we can standardize how the script run. The scripts are mostly structured in the same: prod and test scripts have 99% of similarity, the 1% is test-setup will open server endpoint in browser when it is ready (it will fails to open the browser in Ubuntu but it does no harm) while prod-setup will not; dev has slightly more scripts and much loosely structured so that you can develope with more flexible scripts; while jest only has 2 scripts.
 
-When come to applications, prod and test are exactly the same, they both dockerize the nodejs and prisma, dev on the other hand only prisma in the container(prisma currently can only run in docker container). The reason behind this architecure is simple, we shouldn't be developing in container environment, we should only dockerize when we want to deliver it, plus develope in container environment add difficulty and slow down the development.
+When come to applications, prod and test are exactly the same, they both dockerize the nodejs and prisma, dev on the other hand only prisma in the container(prisma currently can only run in docker container). The reason behind this architecure is simple, we shouldn't be developing in container environment, we should only dockerize when we want to deliver it, plus develope in container environment add difficulty and slow down the development. Jest in the other hand mimic real world interaction and act upon test environment.
 
-Docker refuse to add key that allow user to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a new yml file for dev, yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building node every time is not ideal for dev.
+Docker refuse to add key that allows user to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a new yml file for dev, yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building node every time is not ideal for dev.
 
     "separator-0": "-----------------------------------------------------basic-----------------------------------------------------------------------",
     "start": "npm run build && node dist/index.js", build the code and start nodejs,
@@ -98,8 +99,8 @@ Docker refuse to add key that allow user to run a service or not because the dev
     "playground": "cross-env-shell \"./node_modules/.bin/opn $NODE_ENDPOINT\"", open nodejs endpoint in browser (will fail in Ubuntu but do no harm)
     "wait-prisma": "cross-env-shell \"sleep 12\"", delay for x seconds
     "separator-1": "-----------------------------------------------------jest------------------------------------------------------------------------",
-    "jest": "env-cmd ./.config/jest.env jest --watch --runInBand", watch for the change and run the jest in sequence,
-    "jest-ci": "env-cmd ./.config/jest.env jest --runInBand", run the jest in sequence,
+    "jest": "env-cmd ./.config/jest.env jest --watch --runInBand", build, watch for the change and run the jest in sequence,
+    "jest-ci": "env-cmd ./.config/jest.env jest --runInBand", build and run the jest in sequence,
     "separator-2": "-----------------------------------------------------prod------------------------------------------------------------------------",
     "prod-setup": "npm run prod-build && npm run prod-up && node ./terminalString/mprod.js", build and orchestrate containers
     "prod-start": "npm run wait-prisma && npm run prod-deploy && env-cmd ./.config/prod.env npm run start", deploy and generate schema, start nodejs
