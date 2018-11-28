@@ -7,8 +7,8 @@ jobs:
     steps:
       - checkout
       - run: echo "npm installing"
-      - run: npm install
-      - run: echo "test-ci"
+      - run: npm i
+      - run: echo "jest-ci"
       - run: CI=true npm run jest-ci # example:CI=true inject env variable CI = true
 workflows:
   version: 2
