@@ -67,14 +67,14 @@ with just one script, our dev environment graphql playground automatically open 
 
 \*for Mac user, please change the value of PSQL_HOST in ./config/dev.env to docker.for.mac.localhost, do note that there is no similar support for Ubuntu(why you want to run dev in Ubuntu anyway?).
 
-Did I mention this boilerplate also comes with:
+This boilerplate also comes with:
 
 1. commit hooked prettier styling
 2. Babel env preset
 3. basic data model
 4. basic schema
 5. basic api call
-6. basic test (include subscription test)
+6. basic test
 7. basic CircleCI configuration file
 8. basic JWT authentication
 
@@ -159,4 +159,6 @@ jest environment
 
 ## Acknowledgement
 
-_credit for Udemy instructor Andrew Mead, this boilerplate is modified version of Andrew's boilerplate._
+\_[graphql-boilerplate](https://github.com/andrewjmead/graphql-boilerplate)
+
+\_[create-next-app](https://github.com/segmentio/create-next-app)

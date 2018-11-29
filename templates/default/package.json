@@ -1,13 +1,9 @@
 {
-  "name": "create-prisma-app",
-  "version": "1.0.5",
-  "description": "create-prisma-app",
-  "author": "tylim",
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/tylim88/create-prisma-app"
-  },
+  "name": "create-prisma-example-app",
+  "version": "1.0.0",
+  "description": "create-prisma-example-app",
+  "author": "",
+  "license": "ISC",
   "scripts": {
     "separator-0": "-----------------------------------------------------basic-----------------------------------------------------------------------",
     "start": "npm run build && node dist/index.js",
