@@ -29,22 +29,3 @@ services:
     command: ${COMMAND}
     ports:
       - '${NODE_PORT}:${NODE_PORT}'
-  # postgres:
-  #   container_name: postgres
-  #   restart: always
-  #   image: postgres
-  #   environment:
-  #     POSTGRES_USER: ${PSQL_USER}
-  #     POSTGRES_PASSWORD: ${PSQL_PASSWORD}
-  #     POSTGRES_DB: ${PSQL_DATABASE}
-  #     POSTGRES_HOST: ${PSQL_HOST}
-  #   volumes:
-  #     # if you are window user, currently it is impossible to mount psql storage to window drive, you can only use container storage https://github.com/docker/for-win/issues/445
-  #     - postgres_volume:/var/lib/postgresql/data
-  #   ports:
-  #     - '${PSQL_PORT}:5432'
-# volumes:
-#   postgres_volume:
-#     # persistent volume for psql
-#     name: ${DOCKER_VOLUME}
-#     external: true
