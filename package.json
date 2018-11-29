@@ -80,7 +80,6 @@
     "apollo-link-ws": "^1.0.9",
     "apollo-utilities": "^1.0.25",
     "bcrypt": "^3.0.2",
-    "cross-fetch": "^2.2.3",
     "graphql": "^0.13.2",
     "graphql-yoga": "^1.16.7",
     "jsonwebtoken": "^8.4.0",
