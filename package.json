@@ -1,6 +1,6 @@
 {
   "name": "create-prisma-app",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "create-prisma-app",
   "main": "index.js",
   "repository": {

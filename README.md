@@ -1,6 +1,14 @@
-# Intro
+# Create Prisma App
 
-_this package cant be properly downloaded from npm, please clone it in github, I am working on better readme_
+To install:
+
+```
+download https://github.com/tylim88/create-prisma-app/archive/master.zip
+unzip
+npm i
+```
+
+## Intro
 
 This package is aim to get you up and running in different environments, in general there are 4 types of environments:
 
@@ -33,7 +41,7 @@ Hence this motivates me to create and maintain well structured boilerplate, so t
 
 Docker refuse to add key that allows user to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a seperate docker yml file for dev. Yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building Node every time is not ideal for dev.
 
-# Objective
+## Objective
 
 The objective of this boilerplate is you should able to run it with just installing docker and use npm script to run command.
 
@@ -75,7 +83,7 @@ Did I mention this boilerplate also comes with:
 - if you are facing port is already allocated error, it is most likely you have postgres installed and running with 5433 port, change PSQL_PORT in ./config/dev.env
 - to shut down container: npm run xxxx-down (xxx is dev or test or prod)
 
-# Doc
+## Doc
 
 The scripts is extended to 5 parts:
 
@@ -146,10 +154,10 @@ Here is doc for scripts,
     "dev-tail": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up", orchestrate containers with tail logs
     "dev-down": "env-cmd ./.config/dev.env npm run down" shut down containers
 
-# Work in Progress
+## Work in Progress
 
 jest environment
 
-# Acknowledgement
+## Acknowledgement
 
 _credit for Udemy instructor Andrew Mead, this boilerplate is modified version of Andrew's boilerplate._
