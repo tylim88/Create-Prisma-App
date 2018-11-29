@@ -1,5 +1,7 @@
 # Intro
 
+_this package cant be properly downloaded from npm, please clone it in github, I am working on better readme_
+
 This package is aim to get you up and running in different environments, in general there are 4 types of environments:
 
 1. dev(dev.env)
