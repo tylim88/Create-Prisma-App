@@ -1,8 +1,6 @@
 # Intro
 
-Why spending time perfecting this boilerplate, isn't it just a boilerplate?
-
-To understand this let us look at the environments we working in, in general there are 4 types of environments:
+This package is aim to get you up and running in different environments, in general there are 4 types of environments:
 
 1. dev(dev.env)
    Ideally dev is an environment that allow us to code and experimenting our thing even without internet. It is an environment that we can carry on planning and creating without relying third party service such as server on AWS, instead we should have a server that we can toy with anytime in our computer.
