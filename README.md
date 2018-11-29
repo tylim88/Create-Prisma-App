@@ -1,8 +1,4 @@
-# README
-
-_credit for Udemy instructor Andrew Mead, this boilerplate is modified version of Andrew's boilerplate._
-
-## Intro
+# Intro
 
 Why spending time perfecting this boilerplate, isn't it just a boilerplate?
 
@@ -34,6 +30,10 @@ As we can see we have 4 environments and setting up all the environments can be 
 If the environments are too complicated to setup, it take our attention away from REAL engineering problem, I remember in my first job, we spent 80% of the time just to pick up the tool (if you are curious, it was Siemens software and Siemens is infamous for not so user friendly software).
 
 Hence this motivates me to create and maintain well structured boilerplate, so that any newcomer that join the project can work on the code with minimum configuration. When we creating a boilerplate, alway put the team in mind, even if we are working alone, we also should do this because boilerplate that is convenient for a team definitely convenient for one man army too.
+
+Docker refuse to add key that allows user to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a seperate docker yml file for dev. Yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building Node every time is not ideal for dev.
+
+# Objective
 
 The objective of this boilerplate is you should able to run it with just installing docker and use npm script to run command.
 
@@ -75,7 +75,7 @@ Did I mention this boilerplate also comes with:
 - if you are facing port is already allocated error, it is most likely you have postgres installed and running with 5433 port, change PSQL_PORT in ./config/dev.env
 - to shut down container: npm run xxxx-down (xxx is dev or test or prod)
 
-## Doc
+# Doc
 
 The scripts is extended to 5 parts:
 
@@ -86,10 +86,6 @@ The scripts is extended to 5 parts:
 - dev
 
 prod, test and dev are derived from basic script, so that we can standardize how the script run. The scripts are mostly structured in the same way: prod and test scripts have 99% of similarity, the 1% is test-setup will open server endpoint in browser when it is ready (it will fails to open the browser in Ubuntu but it does no harm) while prod-setup will not; dev has slightly more scripts and much loosely structured so that you can develope with more flexible scripts; while jest only has 2 scripts.
-
-When come to applications, prod and test are exactly the same, they both dockerize the Node and Prisma, dev on the other hand only dockerize Prisma(Prisma currently can only run in docker container). The reason behind this architecure is simple, we shouldn't be developing in container environment, we should only dockerize when we want to deliver it, plus develope in container environment add difficulty and slow down the process. Jest in the other hand mimic real world interaction and act upon test environment.
-
-Docker refuse to add key that allows user to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a seperate docker yml file for dev, yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building Node every time is not ideal for dev.
 
 Please study ./config/dev.env for better understanding on how environment variable works.
 
@@ -149,3 +145,7 @@ Here is doc for scripts,
     "dev-up": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up -d", orchestrate containers
     "dev-tail": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up", orchestrate containers with tail logs
     "dev-down": "env-cmd ./.config/dev.env npm run down" shut down containers
+
+# Acknowledgement
+
+_credit for Udemy instructor Andrew Mead, this boilerplate is modified version of Andrew's boilerplate._
