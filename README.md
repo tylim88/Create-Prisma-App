@@ -20,9 +20,9 @@ To understand this let us look at the environments we working in, in general the
 4. jest(jest.env)  
    Do not confuse this with test, jest has its own environment variables that points to test environment from outside world, in short jest act as interaction from real world upon this test environment.
 
-As we can see we have 3 environments and setting up all the environments can be very time consuming even for experienced member who just join the team, let alone the beginner. To run the environments, we need to install all kind of software and configure all of them, imagine all kinds of thing we need to do just to get the code run.
+As we can see we have 4 environments and setting up all the environments can be very time consuming even for experienced member who just join the team, let alone the beginner. To run the environments, we need to install all kind of software and configure all of them, imagine all kinds of thing we need to do just to get the code run.
 
-If the environments are too complicated to setup, it take away our attention from REAL engineering problem, I remember in my first job, we spent 80% of the time just to pick up the tool (if you are curious, it was Siemens software and Siemens is infamous for not so user friendly software).
+If the environments are too complicated to setup, it take our attention away from REAL engineering problem, I remember in my first job, we spent 80% of the time just to pick up the tool (if you are curious, it was Siemens software and Siemens is infamous for not so user friendly software).
 
 Hence this motivates me to create and maintain well structured boilerplate, so that any newcomer that join the project can work on the code with minimum configuration. When we creating a boilerplate, alway put the team in mind, even if we are working alone, we also should do this because boilerplate that is convenient for a team definitely convenient for one man army too.
 
@@ -40,8 +40,8 @@ What you need to have:
 3. TeamSQL(optional): SQL database GUI\*
 4. A PSQL database hosted online\*\*
 
-\*With or without Kitematic and TeamSQL, we still able to get the app running, but I strongly recommend them because they are powerful utility  
-\*\*a demo database is ready for you, due to technical complication, I was unable to docker-compose PSQL and Prisma in Ubuntu(it can be done in Window and Mac). Hence to satisfy all three platforms, I decided to exclude PSQL from docker and this is actually a better decision because having database on the other server add security.
+\*With or without Kitematic and TeamSQL, we still able to get the app running, but I strongly recommend them because they are powerful utilities  
+\*\*a demo database is ready for you because due to technical complication, I was unable to docker-compose PSQL and Prisma in Ubuntu(but no problem in Window and Mac). Hence to satisfy all three platforms, I decided to exclude PSQL from docker and this is actually a better decision because having database on the other server add security.
 
 Here is instruction to get running:
 
@@ -49,7 +49,7 @@ Here is instruction to get running:
 
 with just one script, our dev environment graphql playground is up and running, waiting for us to explore!
 
-We can also npm run test-setup to launch test-environment, it is a docker composed of even the node server.
+We can also npm run test-setup to launch test-environment, it is a docker composed of both node and prisma server. (wait a little and refresh browser if you see empty page)
 
 we need to create the prod.env ourself, it can be easily done by using test.env which is provided as template, please refer to ./config/dev.env for guidelines
 
@@ -78,11 +78,11 @@ The scripts is extended to 5 parts:
 - test
 - dev
 
-prod,test and dev is script is derived from basic script, so that we can standardize how the script run. The scripts are mostly structured in the same: prod and test scripts have 99% of similarity, the 1% is test-setup will open server endpoint in browser when it is ready (it will fails to open the browser in Ubuntu but it does no harm) while prod-setup will not; dev has slightly more scripts and much loosely structured so that you can develope with more flexible scripts; while jest only has 2 scripts.
+prod,test and dev are derived from basic script, so that we can standardize how the script run. The scripts are mostly structured in the same way: prod and test scripts have 99% of similarity, the 1% is test-setup will open server endpoint in browser when it is ready (it will fails to open the browser in Ubuntu but it does no harm) while prod-setup will not; dev has slightly more scripts and much loosely structured so that you can develope with more flexible scripts; while jest only has 2 scripts.
 
-When come to applications, prod and test are exactly the same, they both dockerize the nodejs and prisma, dev on the other hand only prisma in the container(prisma currently can only run in docker container). The reason behind this architecure is simple, we shouldn't be developing in container environment, we should only dockerize when we want to deliver it, plus develope in container environment add difficulty and slow down the development. Jest in the other hand mimic real world interaction and act upon test environment.
+When come to applications, prod and test are exactly the same, they both dockerize the nodejs and prisma, dev on the other hand only dockerize prisma(prisma currently can only run in docker container). The reason behind this architecure is simple, we shouldn't be developing in container environment, we should only dockerize when we want to deliver it, plus develope in container environment add difficulty and slow down the process. Jest in the other hand mimic real world interaction and act upon test environment.
 
-Docker refuse to add key that allows user to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a new yml file for dev, yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building node every time is not ideal for dev.
+Docker refuse to add key that allows user to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a seperate docker yml file for dev, yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building node every time is not ideal for dev.
 
 Please study ./config/dev.env for better understanding on how environment variable works
 
