@@ -1,6 +1,9 @@
 # dependencies
 node_modules/
 
+# environment
+.config/prod.env
+
 # production
 dist/
 

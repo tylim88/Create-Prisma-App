@@ -8,105 +8,19 @@
     "type": "git",
     "url": "https://github.com/tylim88/create-prisma-app"
   },
-  "scripts": {
-    "separator-0": "-----------------------------------------------------basic-----------------------------------------------------------------------",
-    "start": "npm run build && node dist/index.js",
-    "build": "babel src --out-dir dist --copy-files",
-    "dbuild": "docker-compose build",
-    "rebuild": "docker-compose build --no-cache",
-    "up": "docker-compose up -d",
-    "tail": "docker-compose up",
-    "deploy": "prisma deploy",
-    "schema": "prisma generate",
-    "token": "prisma token",
-    "volume": "cross-env-shell \"docker volume create $DOCKER_VOLUME\"",
-    "down": "docker-compose down",
-    "playground": "cross-env-shell \"./node_modules/.bin/opn $NODE_ENDPOINT\"",
-    "wait-prisma": "cross-env-shell \"sleep 12\"",
-    "separator-1": "-----------------------------------------------------jest------------------------------------------------------------------------",
-    "jest": "npm run build && env-cmd ./.config/jest.env jest --watch --runInBand",
-    "jest-ci": "npm run build && env-cmd ./.config/jest.env jest --runInBand",
-    "separator-2": "-----------------------------------------------------prod------------------------------------------------------------------------",
-    "prod-setup": "npm run prod-build && npm run prod-up && node ./terminalString/mprod.js",
-    "prod-start": "npm run wait-prisma && npm run prod-deploy && env-cmd ./.config/prod.env npm run start",
-    "prod-deploy": "env-cmd ./.config/prod.env npm run deploy && npm run prod-schema",
-    "prod-schema": "env-cmd ./.config/prod.env npm run schema",
-    "prod-token": "env-cmd ./.config/prod.env npm run token",
-    "prod-build": "env-cmd ./.config/prod.env npm run dbuild",
-    "prod-rebuild": "env-cmd ./.config/prod.env npm run rebuild",
-    "prod-up": "env-cmd ./.config/prod.env npm run up",
-    "prod-tail": "env-cmd ./.config/prod.env npm run tail",
-    "prod-down": "env-cmd ./.config/prod.env npm run down",
-    "separator-3": "---------------------------------------------------test---------------------------------------------------------------------------",
-    "test-setup": "npm run test-build && npm run test-up && node ./terminalString/mtest.js && npm run wait-prisma && env-cmd ./.config/test.env npm run playground",
-    "test-start": "npm run wait-prisma && npm run test-deploy && env-cmd ./.config/test.env npm run start",
-    "test-deploy": "env-cmd ./.config/test.env npm run deploy && npm run test-schema",
-    "test-schema": "env-cmd ./.config/test.env npm run schema",
-    "test-token": "env-cmd ./.config/test.env npm run token",
-    "test-build": "env-cmd ./.config/test.env npm run dbuild",
-    "test-rebuild": "env-cmd ./.config/test.env npm run rebuild",
-    "test-up": "env-cmd ./.config/test.env npm run up",
-    "test-tail": "env-cmd ./.config/test.env npm run tail",
-    "test-down": "env-cmd ./.config/test.env npm run down",
-    "separator-4": "-------------------------------------------------------dev-------------------------------------------------------------------------",
-    "dev-setup": "npm run dev-volume && npm run dev-build && npm run dev-up && cross-env-shell \"sleep 3\" && npm run dev-deploy && concurrently \"npm run dev-start\" \"npm run dev-browse\"",
-    "dev-ready": "concurrently \"npm run dev-up\" \"npm run dev-start\" \"npm run dev-browse\"",
-    "dev-start": "env-cmd ./.config/dev.env npm start",
-    "dev-browse": "cross-env-shell \"sleep 3\" && node ./terminalString/mdev.js && cross-env-shell \"sleep 5\" && env-cmd ./.config/dev.env npm run playground",
-    "dev-nodemon": "env-cmd ./.config/dev.env nodemon src/index.js --ext js,graphql --exec babel-node",
-    "dev-deploy": "env-cmd ./.config/dev.env npm run deploy && npm run dev-schema",
-    "dev-schema": "env-cmd ./.config/dev.env npm run schema",
-    "dev-token": "env-cmd ./.config/dev.env npm run token",
-    "dev-volume": "env-cmd ./.config/dev.env npm run volume",
-    "dev-build": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml build",
-    "dev-rebuild": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml build --no-cache",
-    "dev-up": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up -d",
-    "dev-tail": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up",
-    "dev-down": "env-cmd ./.config/dev.env npm run down"
+  "keywords": [
+    "prisma",
+    "graphql",
+    "yoga",
+    "create-prisma-app",
+    "boilerplate"
+  ],
+  "bin": {
+    "create-prisma-app": "./index.js"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.0.0",
-    "apollo-boost": "^0.1.21",
-    "apollo-cache-inmemory": "^1.3.10",
-    "apollo-client": "^2.4.6",
-    "apollo-link": "^1.2.3",
-    "apollo-link-error": "^1.1.1",
-    "apollo-link-http": "^1.5.5",
-    "apollo-link-ws": "^1.0.9",
-    "apollo-utilities": "^1.0.25",
-    "bcrypt": "^3.0.2",
-    "graphql": "^0.13.2",
-    "graphql-yoga": "^1.16.7",
-    "jsonwebtoken": "^8.4.0",
-    "prisma-binding": "^2.2.1",
-    "subscriptions-transport-ws": "^0.9.15"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.1.5",
-    "@babel/core": "^7.1.6",
-    "@babel/node": "^7.0.0",
-    "@babel/preset-env": "^7.1.6",
-    "@babel/register": "^7.0.0",
-    "babel-core": "^7.0.0-bridge.0",
-    "concurrently": "^4.1.0",
-    "cross-env": "^5.2.0",
-    "env-cmd": "^8.0.2",
-    "husky": "^1.1.4",
-    "jest": "^23.6.0",
-    "nodemon": "^1.18.6",
-    "opn-cli": "^4.0.0",
-    "prettier": "^1.15.2",
-    "pretty-quick": "^1.8.0",
-    "prisma": "^1.20.7"
-  },
-  "babel": {
-    "presets": [
-      "@babel/preset-env"
-    ]
-  },
-  "jest": {
-    "globalSetup": "./tests/jest/globalSetup.js",
-    "globalTeardown": "./tests/jest/globalTeardown.js"
+    "commander": "^2.19.0",
+    "fs-extra": "^7.0.1"
   },
   "prettier": {
     "eslintIntegration": true,
@@ -120,5 +34,10 @@
     "hooks": {
       "pre-commit": "pretty-quick --staged"
     }
+  },
+  "devDependencies": {
+    "husky": "^1.2.0",
+    "prettier": "^1.15.2",
+    "pretty-quick": "^1.8.0"
   }
 }

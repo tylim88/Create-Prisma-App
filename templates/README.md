@@ -3,9 +3,12 @@
 To install:
 
 ```
-npm i -g create-prisma-app
-create-prisma-app MyPrismaApp
+download https://github.com/tylim88/create-prisma-app/archive/master.zip
+unzip
+npm i
 ```
+
+**\*The project generator is in the making to provide better install experience**
 
 ## Intro
 
@@ -54,10 +57,10 @@ What you need to have:
 1. Docker
 2. Kitematic(optional): Docker GUI\*
 3. TeamSQL(optional): SQL database GUI\*
-4. A PSQL database hosted online(for non-dev environment with default setting)\*\*
+4. A PSQL database hosted online(for non-dev environment)\*\*
 
 \*With or without Kitematic and TeamSQL, we still able to get the app running, but I strongly recommend them because they are powerful utilities  
-\*\*I was unable to docker-compose PSQL and Prisma in Ubuntu(but no problem in Window and Mac). Hence to satisfy all three platforms, I decided to exclude PSQL from docker and this is actually a better decision because having database on the other server add security.
+\*\*I was unable to docker-compose PSQL and Prisma in Ubuntu(but no problem in Window and Mac). Hence to satisfy all three platforms, I decided to exclude PSQL from docker and this is actually a better decision because having database on the other server add security. Even if you dont have databse online, a demo database is ready for you, you can run test-setup with ease, but I still recommend you come up with your own online database for non-dev environment.
 
 Here is instruction to get running:
 
