@@ -6,7 +6,7 @@ _credit for Udemy instructor Andrew Mead, this boilerplate is modified version o
 
 Why spending time perfecting this boilerplate, isn't it just a boilerplate?
 
-To understand this let us look at the environments we working in, in general there are 3 types of environments:
+To understand this let us look at the environments we working in, in general there are 4 types of environments:
 
 1. dev(dev.env)
    Ideally dev is an environment that allow us to code and experimenting our thing even without internet. It is an environment that we can carry on planning and creating without relying third party service such as server on AWS, instead we should have a server that we can toy with anytime in our computer.
@@ -41,7 +41,7 @@ What you need to have:
 4. A PSQL database hosted online\*\*
 
 \*With or without Kitematic and TeamSQL, we still able to get the app running, but I strongly recommend them because they are powerful utility
-\*\*a demo database is ready for you, due to technical complication, I was unable to docker-compose PSQL and Prisma in Ubuntu(it can be done in Window and Mac). Hence to satisfy all three platforms, I decided to exclude PSQL from docker and it is actually a better decision because having database on the other server add the security.
+\*\*a demo database is ready for you, due to technical complication, I was unable to docker-compose PSQL and Prisma in Ubuntu(it can be done in Window and Mac). Hence to satisfy all three platforms, I decided to exclude PSQL from docker and this is actually a better decision because having database on the other server add security.
 
 Here is instruction to get running:
 

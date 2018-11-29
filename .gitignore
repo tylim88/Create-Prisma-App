@@ -1,3 +1,4 @@
 node_modules/
 .config/prod.env
 dist/
+.DS_Store
