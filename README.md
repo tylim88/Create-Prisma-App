@@ -50,7 +50,7 @@ What you need to have:
 4. A PSQL database hosted online(for non-dev environment)\*\*
 
 \*With or without Kitematic and TeamSQL, we still able to get the app running, but I strongly recommend them because they are powerful utilities  
-\*\*a demo database is ready for you because due to technical complication, I was unable to docker-compose PSQL and Prisma in Ubuntu(but no problem in Window and Mac). Hence to satisfy all three platforms, I decided to exclude PSQL from docker and this is actually a better decision because having database on the other server add security.
+\*\*I was unable to docker-compose PSQL and Prisma in Ubuntu(but no problem in Window and Mac). Hence to satisfy all three platforms, I decided to exclude PSQL from docker and this is actually a better decision because having database on the other server add security. Even if you dont have databse online, a demo database is ready for you, you can run test-setup with ease, but I still recommend you come up with your own online database for non-dev environment.
 
 Here is instruction to get running:
 
