@@ -146,6 +146,10 @@ Here is doc for scripts,
     "dev-tail": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up", orchestrate containers with tail logs
     "dev-down": "env-cmd ./.config/dev.env npm run down" shut down containers
 
+# Work in Progress
+
+jest environment
+
 # Acknowledgement
 
 _credit for Udemy instructor Andrew Mead, this boilerplate is modified version of Andrew's boilerplate._
