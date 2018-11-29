@@ -1,6 +1,6 @@
 {
   "name": "create-prisma-app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "create-prisma-app",
   "main": "index.js",
   "repository": {
@@ -68,7 +68,7 @@
     "globalTeardown": "./tests/jest/globalTeardown.js"
   },
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "apollo-boost": "^0.1.21",
