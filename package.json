@@ -16,7 +16,7 @@
     "boilerplate"
   ],
   "bin": {
-    "create-prisma-app": "./index.js"
+    "create-prisma-app": "./cli.js"
   },
   "dependencies": {
     "commander": "^2.19.0",
