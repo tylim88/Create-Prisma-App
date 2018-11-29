@@ -18,7 +18,7 @@ program
 
 const createPrismaApp = (projectName) => {
   try {
-    fs.copySync('./templates', `${process.cwd()}/${projectName}`)
+    fs.copySync(`${__dirname}/templates`, `${process.cwd()}/${projectName}`)
     console.log('success!')
   } catch (err) {
     console.error(err)
