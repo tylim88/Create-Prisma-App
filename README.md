@@ -22,12 +22,12 @@ To understand this let us look at the environments we working in, in general the
 
 To summarize it:
 
-| Environment | Prisma                      | Node                        | Database(PSQL)              | Justification                     |
-| ----------- | --------------------------- | --------------------------- | --------------------------- | --------------------------------- |
-| dev         | dockerized locally          | local                       | dockerized locally          | for fast development              |
-| prod        | dockerized in prod server 1 | dockerized in prod server 1 | dockerized in prod server 2 | for easy deployment in production |
-| test        | dockerized in test server 1 | dockerized in test server 1 | dockerized in test server 2 | to mimic production environment   |
-| jest        | none                        | none                        | none                        | to interact with test environment |
+| Environment | Prisma                      | Node                        | Database(PSQL)     | Justification                     |
+| ----------- | --------------------------- | --------------------------- | ------------------ | --------------------------------- |
+| dev         | dockerized locally          | local                       | dockerized locally | for fast development              |
+| prod        | dockerized in prod server 1 | dockerized in prod server 1 | prod server 2      | for easy deployment in production |
+| test        | dockerized in test server 1 | dockerized in test server 1 | test server 2      | to mimic production environment   |
+| jest        | none                        | none                        | none               | to interact with test environment |
 
 As we can see we have 4 environments and setting up all the environments can be very time consuming even for experienced member who just join the team, let alone the beginner. To run the environments, we need to install all kind of software and configuring all of them, imagine all kinds of thing we need to do just to get the code run.
 
