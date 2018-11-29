@@ -1,11 +1,11 @@
 {
-  "name": "graphql_prisma_backend_boilerplate",
+  "name": "create-prisma-app",
   "version": "1.0.0",
-  "description": "graphql_prisma_backend_boilerplate",
+  "description": "create-prisma-app",
   "main": "index.js",
   "repository": {
     "type": "git",
-    "url": "https://github.com/tylim88/Graphql-Prisma-BackEnd-Boilerplate.git"
+    "url": "https://github.com/tylim88/create-prisma-app"
   },
   "scripts": {
     "separator-0": "-----------------------------------------------------basic-----------------------------------------------------------------------",
