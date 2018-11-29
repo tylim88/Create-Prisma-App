@@ -1,8 +1,9 @@
 {
   "name": "create-prisma-app",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "create-prisma-app",
-  "main": "index.js",
+  "author": "tylim",
+  "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/tylim88/create-prisma-app"
@@ -63,12 +64,6 @@
     "dev-tail": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up",
     "dev-down": "env-cmd ./.config/dev.env npm run down"
   },
-  "jest": {
-    "globalSetup": "./tests/jest/globalSetup.js",
-    "globalTeardown": "./tests/jest/globalTeardown.js"
-  },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "apollo-boost": "^0.1.21",
@@ -108,6 +103,10 @@
     "presets": [
       "@babel/preset-env"
     ]
+  },
+  "jest": {
+    "globalSetup": "./tests/jest/globalSetup.js",
+    "globalTeardown": "./tests/jest/globalTeardown.js"
   },
   "prettier": {
     "eslintIntegration": true,

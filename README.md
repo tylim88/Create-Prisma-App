@@ -8,6 +8,8 @@ unzip
 npm i
 ```
 
+**\*The project generator is in the making to provide better install experience**
+
 ## Intro
 
 This package is aim to get you up and running in different environments, in general there are 4 types of environments:
