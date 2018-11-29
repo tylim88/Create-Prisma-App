@@ -159,6 +159,8 @@ jest environment
 
 ## Acknowledgement
 
+This project is inspired by the authors of existing related project
+
 \_[graphql-boilerplate](https://github.com/andrewjmead/graphql-boilerplate)
 
 \_[create-next-app](https://github.com/segmentio/create-next-app)
