@@ -4,6 +4,7 @@ const chalk = require('chalk')
 const program = require('commander')
 const pkg = require('./package.json')
 const fs = require('fs-extra')
+const execa = require('execa')
 
 let projectName
 
@@ -18,10 +19,19 @@ program
 
 const createPrismaApp = (projectName) => {
   try {
+    console.log(chalk.bgYellow.black('installing...'))
     fs.copySync(`${__dirname}/templates`, `${process.cwd()}/${projectName}`)
-    console.log('success!')
+    execa
+      .shell(`cd ${process.cwd()}/${projectName} && npm i`)
+      .then((result) => {
+        console.log(result.stdout)
+        console.log(chalk.bgGreen.black('success!'))
+      })
+      .catch((error) => {
+        console.log(chalk.bgRed.white(error))
+      })
   } catch (err) {
-    console.error(err)
+    console.error(chalk.bgRed.white(err))
   }
 }
 
