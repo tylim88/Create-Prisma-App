@@ -20,8 +20,9 @@ test environment quick start:
 1. in ./config.test.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
 2. Run this in console: npm run test-setup
 
-note that test-start, test-deploy and test-schema doesn't work outside the of the container(remember unlike dev environment, node is running in container)
 ```
+
+note that test-start, test-deploy and test-schema doesn't work outside the of the container(remember unlike dev environment, node is running in container)
 
 prod environment quick start:
 
@@ -46,22 +47,34 @@ PSQL_PASSWORD=1234567890
 PSQL_SSL=true
 COMMAND=npm run prod-start
 
-use this for the prod.env, why I didnt upload this? Because you shouldn't upload prod.env to github, uploading test.env is also arguable. Prod is very similar to test, so the instructions also similar.
+```
 
+use this for the ./config.prod.env, why I didnt upload this? Because you shouldn't upload prod.env to github, even uploading test.env is already arguable.
+
+Prod is very similar to test, so the instructions also similar:
+
+```
 1. in ./config.prod.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
 2. Run this in console: npm run prod-setup
+```
 
 note that prod-start, prod-deploy and prod-schema doesn't work outside the of the container(remember unlike dev environment, node is running in container)
-```
 
 jest environment quick start:
 
 ```
 1. in ./config/jest.env, change the value of PRISMA_ENDPOINT to match dev or test.
+```
 
 important: do not run jest on prod prisma endpoint because jest delete database in the beginning of run!
 
-note: I am yet to polish jest logic, as you can see currently it connects to prisma endpoint not node endpoint, but you can still use it without problem.
+note: I am yet to polish jest logic, as you can see currently it connects to prisma endpoint not node endpoint, but you can still use it without problem. I am planning to add basic mild test for production in future.
+
+finally:
+
+```
+1. whatever configuration you want to do, do it in ./config, read comments in dev.env to have better understanding variables.
+2. read the doc of scripts, the scripts may look overwhelming, but it is actually repetitive in pattern, what the scripts do are also very straight forward, they are just like the scripts that you frequently use, just more organized and accessible.
 ```
 
 ## Intro
@@ -93,13 +106,13 @@ As we can see we have 4 environments and setting up all the environments can be 
 
 If the environments are too complicated to setup, it take our attention away from REAL engineering problem, I remember in my first job, we spent 80% of the time just to pick up the tool (if you are curious, it was Siemens software and Siemens is infamous for not so user friendly software).
 
-Hence this motivates me to create and maintain well structured boilerplate, so that any newcomer that join the project can work on the code with minimum configuration. When we creating a boilerplate, alway put the team in mind, even if we are working alone, we also should do this because boilerplate that is convenient for a team definitely convenient for one man army too.
+Hence this motivates me to create and maintain well structured boilerplate, so that any newcomer that joins the project can work on the code with minimum configuration. When we creating a boilerplate, alway put the team in mind, even if we are working alone, we also should do this because boilerplate that is convenient for a team definitely convenient for one man army too.
 
-Docker refuse to add key that allows user to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a seperate docker yml file for dev. Yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building Node every time is not ideal for dev.
+Docker refuses to add s key that allows user chooses to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested feature https://github.com/docker/compose/issues/1896, I have no choice but to create a separated docker yml file for dev. Yes we can use --scale service=0 command, but that doesn't stop docker from building the service and building Node every time is not ideal for dev.
 
 ## Objective
 
-The objective of this boilerplate is you should able to run it with just installing docker and use npm script to run commands.
+The objective of this boilerplate is you should able to run it with just installing docker and use npm scripts to run commands.
 
 Prerequisite knowledge:
 
@@ -113,14 +126,16 @@ What you need to have:
 3. TeamSQL(optional): SQL database GUI\*
 4. A PSQL database hosted online(for non-dev environment with default setting)\*\*
 
-\*With or without Kitematic and TeamSQL, we still able to get the app running, but I strongly recommend them because they are powerful utilities  
+\*With or without Kitematic and TeamSQL, we still able to get the app running, but I recommend them because they are powerful utilities.  
 \*\*I was unable to docker-compose PSQL and Prisma in Ubuntu(but no problem in Window and Mac). Hence to satisfy all three platforms, I decided to exclude PSQL from docker and this is actually a better decision because having database on the other server add security.
 
-Here is instruction to get running:
+Here is instructions to get running:
 
 1. to get dev up and run: npm run dev-setup\*
 
-with just one script, our dev environment graphql playground automatically open in browser up and running, waiting for us to explore! We can also npm run test-setup to launch test-environment, it is a docker composed of both Node and Prisma server(wait a little and refresh browser if you see empty page). We need to create the prod.env ourself, it can be easily done by using test.env which is provided as template, please refer to ./config/dev.env for guidelines.
+with just one script, our dev environment graphql playground automatically open in browser up and running, waiting for us to explore!
+
+We can also npm run test-setup to launch test-environment, it is a docker composed of both Node and Prisma server(wait a little and refresh browser if you see empty page). We need to create the prod.env ourself, it can be easily done by using test.env which is provided as template, please refer to ./config/dev.env for guidelines.
 
 \*for Mac user, please change the value of PSQL_HOST in ./config/dev.env to docker.for.mac.localhost, do note that there is no similar support for Ubuntu(why you want to run dev in Ubuntu anyway?).
 
