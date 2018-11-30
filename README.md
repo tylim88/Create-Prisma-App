@@ -27,7 +27,7 @@ note that test-start, test-deploy and test-schema doesn't work outside the of th
 ### prod environment quick start:
 
 ```
-PRISMA_ENDPOINT=http://prisma:41462
+PRISMA_ENDPOINT=http://prisma:4467
 PRISMA_DATAMODEL=datamodel-prod.graphql
 PRISMA_SECRET=password123
 PRISMA_SCHEMA=dist/prodSchema/prisma.graphql
@@ -38,11 +38,11 @@ NODE_PORT=4000
 NODE_ENDPOINT=http://localhost:4000
 
 # docker variable
-PRISMA_PORT=41462
-PSQL_HOST=mydb.cxdlzqr3bko8.ap-southeast-1.rds.amazonaws.com
-PSQL_PORT=5432
+PRISMA_PORT=4467
+PSQL_HOST=myhost
+PSQL_PORT=5433
 PSQL_DATABASE=mydb
-PSQL_USER=tylim
+PSQL_USER=user
 PSQL_PASSWORD=1234567890
 PSQL_SSL=true
 COMMAND=npm run prod-start
@@ -236,3 +236,8 @@ This project is inspired by the authors of existing related project
 \_[graphql-boilerplate](https://github.com/andrewjmead/graphql-boilerplate)
 
 \_[create-next-app](https://github.com/segmentio/create-next-app)
+
+## MISC
+
+this project generator was bootstrapped with [create-npm-package](https://github.com/tylim88/create-npm-package)
+packageception 😈

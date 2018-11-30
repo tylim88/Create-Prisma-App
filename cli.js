@@ -20,7 +20,7 @@ program
 const createPrismaApp = (projectName) => {
   try {
     console.log(chalk.bgYellow.black('installing...'))
-    fs.copySync(`${__dirname}/templates`, `${process.cwd()}/${projectName}`)
+    fs.copySync(`${__dirname}/template`, `${process.cwd()}/${projectName}`)
     execa
       .shell(`cd ${process.cwd()}/${projectName} && npm i`)
       .then((result) => {

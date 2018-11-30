@@ -1,6 +1,7 @@
 # v1.1.4
 
-- no changes
+- change templates folder name to template
+- docker down script now comes with --remove-orphans option
 - housekeeping readme
 - add description in main package.json
 

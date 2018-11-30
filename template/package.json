@@ -16,7 +16,7 @@
     "schema": "prisma generate",
     "token": "prisma token",
     "volume": "cross-env-shell \"docker volume create $DOCKER_VOLUME\"",
-    "down": "docker-compose down",
+    "down": "docker-compose down --remove-orphans",
     "playground": "cross-env-shell \"./node_modules/.bin/opn $NODE_ENDPOINT\"",
     "wait-prisma": "cross-env-shell \"sleep 12\"",
     "separator-1": "-----------------------------------------------------jest------------------------------------------------------------------------",
