@@ -1,3 +1,7 @@
+# v1.1.5
+
+- no longer accept empty project name
+
 # v1.1.4
 
 - change templates folder name to template

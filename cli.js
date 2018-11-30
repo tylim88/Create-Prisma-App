@@ -35,5 +35,9 @@ const createPrismaApp = (projectName) => {
   }
 }
 
-if (/^([A-Za-z\-\_\d])+$/.test(projectName)) createPrismaApp(projectName)
-else console.log(chalk.bgRed.white('invalid project name'))
+if (/^([A-Za-z\-\_\d])+$/.test(projectName) && projectName !== undefined)
+  createPrismaApp(projectName)
+else
+  console.log(
+    chalk.bgRed.white(`project name  <${projectName}> is an invalid name`)
+  )
