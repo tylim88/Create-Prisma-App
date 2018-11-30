@@ -7,14 +7,71 @@ npm i -g create-prisma-app
 create-prisma-app MyPrismaApp
 ```
 
+dev environment quick start:
+
+```
+1. Window user can skip step 1; Mac user please open ./config.dev.env, change the value of PSQL_HOST to docker.for.mac.localhost
+2. Run this in console: npm run dev-setup
+```
+
+test environment quick start:
+
+```
+1. in ./config.test.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
+2. Run this in console: npm run test-setup
+
+note that test-start, test-deploy and test-schema doesn't work outside the of the container(remember unlike dev environment, node is running in container)
+```
+
+prod environment quick start:
+
+```
+PRISMA_ENDPOINT=http://prisma:41462
+PRISMA_DATAMODEL=datamodel-prod.graphql
+PRISMA_SECRET=password123
+PRISMA_SCHEMA=dist/prodSchema/prisma.graphql
+CLIENT_SCHEMA=dist/prodSchema/client.graphql
+OUTPUT_FOLDER=../src/prodSchema
+JWT_SECRET=thisisasecret
+NODE_PORT=4000
+NODE_ENDPOINT=http://localhost:4000
+
+# docker variable
+PRISMA_PORT=41462
+PSQL_HOST=mydb.cxdlzqr3bko8.ap-southeast-1.rds.amazonaws.com
+PSQL_PORT=5432
+PSQL_DATABASE=mydb
+PSQL_USER=tylim
+PSQL_PASSWORD=1234567890
+PSQL_SSL=true
+COMMAND=npm run prod-start
+
+use this for the prod.env, why I didnt upload this? Because you shouldn't upload prod.env to github, uploading test.env is also arguable. Prod is very similar to test, so the instructions also similar.
+
+1. in ./config.prod.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
+2. Run this in console: npm run prod-setup
+
+note that prod-start, prod-deploy and prod-schema doesn't work outside the of the container(remember unlike dev environment, node is running in container)
+```
+
+jest environment quick start:
+
+```
+1. in ./config/jest.env, change the value of PRISMA_ENDPOINT to match dev or test.
+
+important: do not run jest on prod prisma endpoint because jest delete database in the beginning of run!
+
+note: I am yet to polish jest logic, as you can see currently it connects to prisma endpoint not node endpoint, but you can still use it without problem.
+```
+
 ## Intro
 
 This package is aim to get you up and running in different environments, in general there are 4 types of environments:
 
-1. dev(dev.env)
+1. dev(dev.env)  
    Ideally dev is an environment that allow us to code and experimenting our thing even without internet. It is an environment that we can carry on planning and creating without relying third party service such as server on AWS, instead we should have a server that we can toy with anytime in our computer.
 
-2. prod(prod.env)
+2. prod(prod.env)  
    Prod is the environment where we want to treat our data, data model and configuration delicately. Imagine if we accidentally deploy our dev data and configuration into prod, that would be hell unleashed.For some cases we can mix up test and dev environments and that is tolerable, but production environment MUST has it own space, this is not an option.
 
 3. test(test.env)  
@@ -42,7 +99,7 @@ Docker refuse to add key that allows user to run a service or not because the de
 
 ## Objective
 
-The objective of this boilerplate is you should able to run it with just installing docker and use npm script to run command.
+The objective of this boilerplate is you should able to run it with just installing docker and use npm script to run commands.
 
 Prerequisite knowledge:
 
@@ -108,7 +165,7 @@ Here is doc for scripts,
     "deploy": "Prisma deploy", deploy Prisma data model to database,
     "schema": "Prisma generate", generate schema from Prisma for Node,
     "token": "Prisma token", generate Prisma authentication token,
-    "volume": "cross-env-shell \"docker volume create $DOCKER_VOLUME\"", create docker volume(deprecated)
+    "volume": "cross-env-shell \"docker volume create $DOCKER_VOLUME\"", create docker volume
     "down": "docker-compose down", shut down containers
     "playground": "cross-env-shell \"./Node_modules/.bin/opn $Node_ENDPOINT\"", open Node endpoint in browser (will fail in Ubuntu but do no harm)
     "wait-Prisma": "cross-env-shell \"sleep 12\"", delay for x seconds
