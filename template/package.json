@@ -1,7 +1,7 @@
 {
-  "name": "create-prisma-example-app",
+  "name": "prisma-example-app",
   "version": "1.0.0",
-  "description": "create-prisma-example-app",
+  "description": "prisma-example-app",
   "author": "",
   "license": "ISC",
   "scripts": {

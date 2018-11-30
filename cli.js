@@ -18,9 +18,11 @@ program
   .parse(process.argv)
 
 const createPrismaApp = (projectName) => {
+  const projectPath = `${process.cwd()}/${projectName}`
   try {
     console.log(chalk.bgYellow.black('installing...'))
-    fs.copySync(`${__dirname}/template`, `${process.cwd()}/${projectName}`)
+    fs.copySync(`${__dirname}/template`, projectPath)
+    fs.move(`${projectPath}/toBeRename`, `${projectPath}/.gitignore`)
     execa
       .shell(`cd ${process.cwd()}/${projectName} && npm i`)
       .then((result) => {

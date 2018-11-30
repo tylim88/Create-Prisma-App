@@ -1,5 +1,3 @@
-// import 'cross-fetch/polyfill'
-import { gql } from 'apollo-boost'
 import prisma from '../src/prismaBinding'
 import seedDatabase, { userOne } from './utils/seedDatabase'
 import getClient from './utils/getClient'
@@ -11,8 +9,6 @@ beforeEach(seedDatabase)
 
 test('Should create a new user', async () => {
   jest.setTimeout(100000)
-  const a = { b: 1 }
-  const c = { ...a }
   const variables = {
     data: {
       name: 'Andrew',

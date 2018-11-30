@@ -1,3 +1,8 @@
+# v1.1.8
+
+- fix unable to copy .gitignore
+- housekeeping user.test.js
+
 # v1.1.7
 
 - update readme

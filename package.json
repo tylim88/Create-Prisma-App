@@ -1,6 +1,6 @@
 {
   "name": "create-prisma-app",
-  "version": "1.1.7",
+  "version": "1.1.8",
   "description": "create-prisma-app",
   "author": "tylim",
   "license": "MIT",
@@ -16,7 +16,9 @@
     "graphql",
     "yoga",
     "create-prisma-app",
-    "boilerplate"
+    "boilerplate",
+    "server",
+    "backend"
   ],
   "bin": {
     "create-prisma-app": "./cli.js"
