@@ -1,6 +1,6 @@
 # Create Prisma App
 
-### To install:
+## Installation:
 
 ```
 npm i -g create-prisma-app

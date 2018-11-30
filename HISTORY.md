@@ -1,3 +1,9 @@
+# v1.1.4
+
+- no changes
+- housekeeping readme
+- add description in main package.json
+
 # v1.1.3
 
 - no changes
