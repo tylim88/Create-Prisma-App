@@ -9,18 +9,13 @@ create-prisma-app MyPrismaApp
 
 ### dev environment quick start:
 
-```
 1. Window user can skip step 1; Mac user please open ./config.dev.env, change the value of PSQL_HOST to docker.for.mac.localhost
 2. Run this in console: npm run dev-setup
-```
 
 ### test environment quick start:
 
-```
 1. in ./config.test.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
 2. Run this in console: npm run test-setup
-
-```
 
 note that test-start, test-deploy and test-schema doesn't work outside the of the container(remember unlike dev environment, node is running in container)
 
@@ -46,25 +41,20 @@ PSQL_USER=user
 PSQL_PASSWORD=1234567890
 PSQL_SSL=true
 COMMAND=npm run prod-start
-
 ```
 
 use this for the ./config.prod.env, why I didnt upload this? Because you shouldn't upload prod.env to github, even uploading test.env is already arguable.
 
 Prod is very similar to test, so the instructions also similar:
 
-```
 1. in ./config.prod.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
 2. Run this in console: npm run prod-setup
-```
 
 note that prod-start, prod-deploy and prod-schema doesn't work outside the of the container(remember unlike dev environment, node is running in container)
 
 ### jest environment quick start:
 
-```
 1. in ./config/jest.env, change the value of PRISMA_ENDPOINT to match dev or test.
-```
 
 important: do not run jest on prod prisma endpoint because jest delete database in the beginning of run!
 
@@ -72,10 +62,8 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 
 ### finally:
 
-```
 1. whatever configuration you want to do, do it in ./config, read comments in dev.env to have better understanding variables.
 2. read the doc of scripts, the scripts may look overwhelming, but it is actually repetitive in pattern, what the scripts do are also very straight forward, they are just like the scripts that you frequently use, just more organized and accessible.
-```
 
 ## Intro
 
