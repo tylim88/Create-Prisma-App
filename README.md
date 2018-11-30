@@ -239,5 +239,5 @@ This project is inspired by the authors of existing related project
 
 ## MISC
 
-this project generator was bootstrapped with [create-npm-package](https://github.com/tylim88/create-npm-package)
+this project generator was bootstrapped with [create-npm-create](https://github.com/tylim88/create-npm-create)
 packageception 😈

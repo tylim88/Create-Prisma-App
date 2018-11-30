@@ -1,3 +1,7 @@
+# v1.1.6
+
+- housekeeping readme
+
 # v1.1.5
 
 - no longer accept empty project name
