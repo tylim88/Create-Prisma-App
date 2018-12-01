@@ -22,7 +22,7 @@ const createPrismaApp = (projectName) => {
   try {
     console.log(chalk.bgYellow.black('installing...'))
     fs.copySync(`${__dirname}/template`, projectPath)
-    fs.move(`${projectPath}/toBeRename`, `${projectPath}/.gitignore`)
+    fs.move(`${projectPath}/toBeRenamed`, `${projectPath}/.gitignore`)
     execa
       .shell(`cd ${process.cwd()}/${projectName} && npm i`)
       .then((result) => {

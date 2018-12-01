@@ -1,3 +1,7 @@
+# v1.1.9
+
+- change file name toBeRename to toBeRenamed
+
 # v1.1.8
 
 - fix unable to copy .gitignore
