@@ -17,7 +17,7 @@ create-prisma-app MyPrismaApp
 1. in ./config.test.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
 2. Run this in console: npm run test-setup
 
-note that test-start, test-deploy and test-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, node is running in container)
+note that test-start, test-deploy and test-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
 
 ### prod environment quick start:
 
@@ -50,7 +50,7 @@ Prod is very similar to test, so the instructions also similar:
 1. in ./config.prod.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
 2. Run this in console: npm run prod-setup
 
-note that prod-start, prod-deploy and prod-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, node is running in container)
+note that prod-start, prod-deploy and prod-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
 
 ### jest environment quick start:
 
@@ -180,7 +180,7 @@ Here is doc for scripts,
 
 | script                      | command                                                                                                                                                                       | description                                                                              |
 | --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
-| basic                       | basic                                                                                                                                                                         | basic                                                                                    |
+| basic                       | --------------------------------------------------------------------------basic---------------------------------------------------------------------------------------------  | basic                                                                                    |
 | Content from cell 1         | Content from cell 2                                                                                                                                                           |
 | Content in the first column | Content in the second column                                                                                                                                                  |
 | start                       | npm run build && Node dist/index.js                                                                                                                                           | build the code and start Node                                                            |
@@ -237,7 +237,7 @@ Here is doc for scripts,
 | dev-tail                    | env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up                                                                                                       | orchestrate containers with tail logs                                                    |
 | dev-down                    | env-cmd ./.config/dev.env npm run down                                                                                                                                        | shut down containers                                                                     |
 
-\*automatically run in container and doesn't work outside the of the container(remember unlike dev environment, node is running in container)
+\*automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
 
 ## Work in Progress
 
