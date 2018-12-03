@@ -1,6 +1,10 @@
+# v1.1.12
+
+- housekeeping readme
+
 # v1.1.11
 
-- add trouble shooting for readme
+- add trouble shooting in readme
 - increase wait-prisma delay
 
 # v1.1.10

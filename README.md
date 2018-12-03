@@ -70,17 +70,17 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 ### project defualt\$default not found (mostly when running test and prod)
 
 cause: this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection  
-remedy: the solution is easy, increase delay of _wait-prisma_ npm scripts in package.json
+remedy: the solution is easy, increase delay of _wait-prisma_ npm scripts in package.json  
 remark: I will try to come up with checking mechanism in future
 
 ### internal server error (mostly when running test and prod)
 
-cause: could be many reason
+cause: could be many reason  
 remedy: if your config is correct but still has this error, wait a while and keep trying, else google prisma internal server error
 
 ### graphql playground show blank page after dev/test setup
 
-cause: Node fail or haven't established the connection with Prisma server
+cause: Node fail or haven't established the connection with Prisma server  
 remedy: the solution is easy, either you wait and refresh or increase delay of _wait-prisma_ npm scripts in package.json
 
 ## Intro
@@ -141,7 +141,9 @@ Here is instructions to get running:
 
 with just one script, our dev environment graphql playground automatically open in browser up and running, waiting for us to explore!
 
-We can also npm run test-setup to launch test-environment, it is a docker composed of both Node and Prisma server(wait a little and refresh browser if you see empty page). We need to create the prod.env ourself, it can be easily done by using test.env which is provided as template, please refer to ./config/dev.env for guidelines.
+We can also npm run test-setup to launch test-environment, it is a docker composed of both Node and Prisma server(wait a little and refresh browser if you see empty page).
+
+We need to create the prod.env ourself, it can be easily done by using test.env which is provided as template, please refer to ./config/dev.env for guidelines.
 
 \*for Mac user, please change the value of PSQL_HOST in ./config/dev.env to docker.for.mac.localhost, do note that there is no similar support for Ubuntu(why you want to run dev in Ubuntu anyway?).
 
