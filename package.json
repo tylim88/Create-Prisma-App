@@ -18,7 +18,9 @@
     "create-prisma-app",
     "boilerplate",
     "server",
-    "backend"
+    "backend",
+    "PSQL",
+    "postgres"
   ],
   "bin": {
     "create-prisma-app": "./cli.js"

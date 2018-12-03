@@ -17,7 +17,7 @@ create-prisma-app MyPrismaApp
 1. in ./config.test.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
 2. Run this in console: npm run test-setup
 
-note that test-start, test-deploy and test-schema doesn't work outside the of the container(remember unlike dev environment, node is running in container)
+note that test-start, test-deploy and test-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, node is running in container)
 
 ### prod environment quick start:
 
@@ -50,7 +50,7 @@ Prod is very similar to test, so the instructions also similar:
 1. in ./config.prod.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
 2. Run this in console: npm run prod-setup
 
-note that prod-start, prod-deploy and prod-schema doesn't work outside the of the container(remember unlike dev environment, node is running in container)
+note that prod-start, prod-deploy and prod-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, node is running in container)
 
 ### jest environment quick start:
 
@@ -158,60 +158,66 @@ Please study ./config/dev.env for better understanding on how environment variab
 
 Here is doc for scripts,
 
-    "separator-0": "-----------------------------------------------------basic-----------------------------------------------------------------------",
-    "start": "npm run build && Node dist/index.js", build the code and start Node,
-    "build": "babel src --out-dir dist --copy-files", build the code,
-    "dbuild": "docker-compose build", build the containers,
-    "rebuild": "docker-compose build --no-cache", build the containers with no cache,
-    "up": "docker-compose up -d", orchestrate the container,
-    "tail": "docker-compose up", orchestrate the container with tail logs,
-    "deploy": "Prisma deploy", deploy Prisma data model to database,
-    "schema": "Prisma generate", generate schema from Prisma for Node,
-    "token": "Prisma token", generate Prisma authentication token,
-    "volume": "cross-env-shell \"docker volume create $DOCKER_VOLUME\"", create docker volume
-    "down": "docker-compose down", shut down containers
-    "playground": "cross-env-shell \"./Node_modules/.bin/opn $Node_ENDPOINT\"", open Node endpoint in browser (will fail in Ubuntu but do no harm)
-    "wait-Prisma": "cross-env-shell \"sleep 12\"", delay for x seconds
-    "separator-1": "-----------------------------------------------------jest------------------------------------------------------------------------",
-    "jest": "env-cmd ./.config/jest.env jest --watch --runInBand", build, watch for the change and run the jest in sequence,
-    "jest-ci": "env-cmd ./.config/jest.env jest --runInBand", build and run the jest in sequence,
-    "separator-2": "-----------------------------------------------------prod------------------------------------------------------------------------",
-    "prod-setup": "npm run prod-build && npm run prod-up && Node ./terminalString/mprod.js", build and orchestrate containers
-    "prod-start": "npm run wait-Prisma && npm run prod-deploy && env-cmd ./.config/prod.env npm run start", deploy and generate schema, start Node
-    "prod-deploy": "env-cmd ./.config/prod.env npm run deploy && npm run prod-schema", deploy and generate schema
-    "prod-schema": "env-cmd ./.config/prod.env npm run schema", generate Prisma schema
-    "prod-token": "env-cmd ./.config/prod.env npm run token", generate Prisma token
-    "prod-build": "env-cmd ./.config/prod.env npm run dbuild", build containers
-    "prod-rebuild": "env-cmd ./.config/prod.env npm run rebuild", build containers with no cache
-    "prod-up": "env-cmd ./.config/prod.env npm run up", orchestrate containers
-    "prod-tail": "env-cmd ./.config/prod.env npm run tail", orchestrate containers with tail logs
-    "prod-down": "env-cmd ./.config/prod.env npm run down", shut down containers
-    "separator-3": "---------------------------------------------------test---------------------------------------------------------------------------",
-    "test-setup": "npm run test-build && npm run test-up && Node ./terminalString/mtest.js && npm run wait-Prisma && env-cmd ./.config/test.env npm run playground", build, orchestrate containers and open Node endpoint in browser
-    "test-start": "npm run wait-Prisma && npm run test-deploy && env-cmd ./.config/test.env npm run start", deploy and generate schema, start Node
-    "test-deploy": "env-cmd ./.config/test.env npm run deploy && npm run test-schema", deploy and generate schema
-    "test-schema": "env-cmd ./.config/test.env npm run schema", generate Prisma schema
-    "test-token": "env-cmd ./.config/test.env npm run token", generate Prisma token
-    "test-build": "env-cmd ./.config/test.env npm run dbuild", build containers
-    "test-rebuild": "env-cmd ./.config/test.env npm run rebuild", build containers with no cache
-    "test-up": "env-cmd ./.config/test.env npm run up", orchestrate containers
-    "test-tail": "env-cmd ./.config/test.env npm run tail", orchestrate containers with tail logs
-    "test-down": "env-cmd ./.config/test.env npm run down", shut down containers
-    "separator-4": "-------------------------------------------------------dev-------------------------------------------------------------------------",
-    "dev-setup": "npm run dev-volume && npm run dev-build && npm run dev-up && cross-env-shell \"sleep 3\" && npm run dev-deploy && concurrently \"npm run dev-start\" \"npm run dev-browse\"", create volume, build container, orchestrate containers and open Node endpoint in browser
-    "dev-ready": "concurrently \"npm run dev-up\" \"npm run dev-start\" \"npm run dev-browse\"", orchestrate containers, start Node and open browser in parallel
-    "dev-start": "env-cmd ./.config/dev.env npm start", start Node
-    "dev-browse": "cross-env-shell \"sleep 3\" && Node ./terminalString/mdev.js && cross-env-shell \"sleep 5\" && env-cmd ./.config/dev.env npm run playground", open Node endpoint in browser
-    "dev-Nodemon": "env-cmd ./.config/dev.env Nodemon src/index.js --ext js,graphql --exec babel-Node", start Node in Nodemon with babel, watch js and graphql file change
-    "dev-deploy": "env-cmd ./.config/dev.env npm run deploy && npm run dev-schema", deploy and generate schema
-    "dev-schema": "env-cmd ./.config/dev.env npm run schema", generate Prisma schema
-    "dev-token": "env-cmd ./.config/dev.env npm run token", generate Prisma token
-    "dev-volume": "env-cmd ./.config/dev.env npm run volume", create volume
-    "dev-build": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml build", build containers
-    "dev-rebuild": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml build --no-cache", build containers with no cache
-    "dev-up": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up -d", orchestrate containers
-    "dev-tail": "env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up", orchestrate containers with tail logs
-    "dev-down": "env-cmd ./.config/dev.env npm run down" shut down containers
+| script                      | command                                                                                                                                                                       | description                                                                              |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| basic                       | basic                                                                                                                                                                         | basic                                                                                    |
+| Content from cell 1         | Content from cell 2                                                                                                                                                           |
+| Content in the first column | Content in the second column                                                                                                                                                  |
+| start                       | npm run build && Node dist/index.js                                                                                                                                           | build the code and start Node                                                            |
+| build                       | babel src --out-dir dist --copy-files                                                                                                                                         | build the code with babel                                                                |
+| dbuild                      | docker-compose build                                                                                                                                                          | build the containers                                                                     |
+| rebuild                     | docker-compose build --no-cache                                                                                                                                               | build the containers with no cache                                                       |
+| up                          | docker-compose up -d                                                                                                                                                          | orchestrate the container                                                                |
+| tail                        | docker-compose up                                                                                                                                                             | orchestrate the container with tail logs                                                 |
+| deploy                      | Prisma deploy                                                                                                                                                                 | deploy Prisma data model to database                                                     |
+| schema                      | Prisma generate                                                                                                                                                               | generate schema from Prisma for Node                                                     |
+| token                       | Prisma token                                                                                                                                                                  | generate Prisma authentication token                                                     |
+| volume                      | cross-env-shell \"docker volume create \$DOCKER_VOLUME\"                                                                                                                      | create docker volume                                                                     |
+| down                        | docker-compose down --remove-orphans                                                                                                                                          | shut down containers                                                                     |
+| playground                  | cross-env-shell \"./Node_modules/.bin/opn \$Node_ENDPOINT\"                                                                                                                   | open Node endpoint in browser (will fail in Ubuntu but do no harm)                       |
+| wait-Prisma                 | cross-env-shell \"sleep 12\"                                                                                                                                                  | delay for 12 seconds                                                                     |
+| jest                        | jest                                                                                                                                                                          | jest                                                                                     |
+| jest                        | env-cmd ./.config/jest.env jest --watch --runInBand                                                                                                                           | build, watch for the change and run the jest in sequence                                 |
+| jest-ci                     | env-cmd ./.config/jest.env jest --runInBand                                                                                                                                   | build and run the jest in sequence                                                       |
+| prod                        | --------------------------------------------------------------------------prod----------------------------------------------------------------------------------------------  | prod                                                                                     |
+| prod-setup                  | npm run prod-build && npm run prod-up && Node ./terminalString/mprod.js                                                                                                       | build and orchestrate containers                                                         |
+| prod-start\*                | npm run wait-Prisma && npm run prod-deploy && env-cmd ./.config/prod.env npm run start                                                                                        | deploy and generate schema, start Node                                                   |
+| prod-deploy\*               | env-cmd ./.config/prod.env npm run deploy && npm run prod-schema                                                                                                              | deploy and generate schema                                                               |
+| prod-schema\*               | env-cmd ./.config/prod.env npm run schema                                                                                                                                     | generate Prisma schema                                                                   |
+| prod-token                  | env-cmd ./.config/prod.env npm run token                                                                                                                                      | generate Prisma token                                                                    |
+| prod-build                  | env-cmd ./.config/prod.env npm run dbuild                                                                                                                                     | build containers                                                                         |
+| prod-rebuild                | env-cmd ./.config/prod.env npm run rebuild                                                                                                                                    | build containers with no cache                                                           |
+| prod-up                     | env-cmd ./.config/prod.env npm run up                                                                                                                                         | orchestrate containers                                                                   |
+| prod-tail                   | env-cmd ./.config/prod.env npm run tail                                                                                                                                       | orchestrate containers with tail logs                                                    |
+| prod-down                   | env-cmd ./.config/prod.env npm run down                                                                                                                                       | shut down containers                                                                     |
+| test                        | -------------------------------------------------------------------------test-----------------------------------------------------------------------------------------------  | test                                                                                     |
+| test-setup                  | npm run test-build && npm run test-up && Node ./terminalString/mtest.js && npm run wait-Prisma && env-cmd ./.config/test.env npm run                                          | build, orchestrate containers and open Node endpoint in browser(if possible)             |
+| test-start\*                | npm run wait-Prisma && npm run test-deploy && env-cmd ./.config/test.env npm run start                                                                                        | deploy and generate schema, start Node                                                   |
+| test-deploy\*               | env-cmd ./.config/test.env npm run deploy && npm run test-schema                                                                                                              | deploy and generate schema                                                               |
+| test-schema\*               | env-cmd ./.config/test.env npm run schema                                                                                                                                     | generate Prisma schema                                                                   |
+| test-token                  | env-cmd ./.config/test.env npm run token                                                                                                                                      | generate Prisma token                                                                    |
+| test-build                  | env-cmd ./.config/test.env npm run dbuild                                                                                                                                     | build containers                                                                         |
+| test-rebuild                | env-cmd ./.config/test.env npm run rebuild                                                                                                                                    | build containers with no cache                                                           |
+| test-up                     | env-cmd ./.config/test.env npm run up                                                                                                                                         | orchestrate containers                                                                   |
+| test-tail                   | env-cmd ./.config/test.env npm run tail                                                                                                                                       | orchestrate containers with tail logs                                                    |
+| test-down                   | env-cmd ./.config/test.env npm run down                                                                                                                                       | shut down containers                                                                     |
+| dev                         | ---------------------------------------------------------------------------dev----------------------------------------------------------------------------------------------- | dev                                                                                      |
+| dev-setup                   | npm run dev-volume && npm run dev-build && npm run dev-up && cross-env-shell \"sleep 3\" && npm run dev-deploy && concurrently \"npm run dev-start\" \"npm run dev-browse\"   | create volume, build container, orchestrate containers and open Node endpoint in browser |
+| dev-ready                   | concurrently \"npm run dev-up\" \"npm run dev-start\" \"npm run dev-browse\"                                                                                                  | orchestrate containers, start Node and open browser in parallel                          |
+| dev-start                   | env-cmd ./.config/dev.env npm start                                                                                                                                           | start Node                                                                               |
+| dev-browse                  | cross-env-shell \"sleep 3\" && Node ./terminalString/mdev.js && cross-env-shell \"sleep 5\" && env-cmd ./.config/dev.env npm run playground                                   | open Node endpoint in browser                                                            |
+| dev-Nodemon                 | env-cmd ./.config/dev.env Nodemon src/index.js --ext js,graphql --exec babel-Node                                                                                             | start Node in Nodemon with babel, watch js and graphql file change                       |
+| dev-deploy                  | env-cmd ./.config/dev.env npm run deploy && npm run dev-schema                                                                                                                | deploy and generate schema                                                               |
+| dev-schema                  | env-cmd ./.config/dev.env npm run schema                                                                                                                                      | generate Prisma schema                                                                   |
+| dev-token                   | env-cmd ./.config/dev.env npm run token                                                                                                                                       | generate Prisma token                                                                    |
+| dev-volume                  | env-cmd ./.config/dev.env npm run volume                                                                                                                                      | create volume                                                                            |
+| dev-build                   | env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml build                                                                                                    | build containers                                                                         |
+| dev-rebuild                 | env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml build --no-cache                                                                                         | build containers with no cache                                                           |
+| dev-up                      | env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up -d                                                                                                    | orchestrate containers                                                                   |
+| dev-tail                    | env-cmd ./.config/dev.env docker-compose -f ./docker-compose-dev.yml up                                                                                                       | orchestrate containers with tail logs                                                    |
+| dev-down                    | env-cmd ./.config/dev.env npm run down                                                                                                                                        | shut down containers                                                                     |
+
+\*automatically run in container and doesn't work outside the of the container(remember unlike dev environment, node is running in container)
 
 ## Work in Progress
 
