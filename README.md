@@ -80,7 +80,7 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 
 ### graphql playground show blank page after dev/test setup
 
-**cause:** Node fail or haven't established the connection with Prisma server  
+**cause:** Node fail or haven't establish the connection with Prisma server  
 **remedy:** the solution is easy, either you wait and refresh or increase delay of **wait-prisma** npm scripts in package.json
 
 ## Intro
