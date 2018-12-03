@@ -18,7 +18,7 @@
     "volume": "cross-env-shell \"docker volume create $DOCKER_VOLUME\"",
     "down": "docker-compose down --remove-orphans",
     "playground": "cross-env-shell \"./node_modules/.bin/opn $NODE_ENDPOINT\"",
-    "wait-prisma": "cross-env-shell \"sleep 12\"",
+    "wait-prisma": "cross-env-shell \"sleep 20\"",
     "separator-1": "-----------------------------------------------------jest------------------------------------------------------------------------",
     "jest": "npm run build && env-cmd ./.config/jest.env jest --watch --runInBand",
     "jest-ci": "npm run build && env-cmd ./.config/jest.env jest --runInBand",

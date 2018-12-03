@@ -65,6 +65,24 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 1. whatever configuration you want to do, do it in ./config, read comments in dev.env to have better understanding variables.
 2. read the doc of scripts, the scripts may look overwhelming, but it is actually repetitive in pattern, what the scripts do are also very straight forward, they are just like the scripts that you frequently use, just more organized and accessible.
 
+## Troubleshooting
+
+### project defualt\$default not found (mostly when running test and prod)
+
+cause: this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection  
+remedy: the solution is easy, increase delay of _wait-prisma_ npm scripts in package.json
+remark: I will try to come up with checking mechanism in future
+
+### internal server error (mostly when running test and prod)
+
+cause: could be many reason
+remedy: if your config is correct but still has this error, wait a while and keep trying, else google prisma internal server error
+
+### graphql playground show blank page after dev/test setup
+
+cause: Node fail or haven't established the connection with Prisma server
+remedy: the solution is easy, either you wait and refresh or increase delay of _wait-prisma_ npm scripts in package.json
+
 ## Intro
 
 This package is aim to get you up and running in different environments, in general there are 4 types of environments:
