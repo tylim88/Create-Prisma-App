@@ -69,19 +69,19 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 
 ### project defualt\$default not found (mostly when running test and prod)
 
-cause: this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection  
-remedy: the solution is easy, increase delay of _wait-prisma_ npm scripts in package.json  
-remark: I will try to come up with checking mechanism in future
+_cause:_ this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection  
+_remedy:_ the solution is easy, increase delay of _wait-prisma_ npm scripts in package.json  
+_remark:_ I will try to come up with checking mechanism in future
 
 ### internal server error (mostly when running test and prod)
 
-cause: could be many reason  
-remedy: if your config is correct but still has this error, wait a while and keep trying, else google prisma internal server error
+_cause:_ could be many reason  
+_remedy:_ if your config is correct but still has this error, wait a while and keep trying, else google prisma internal server error
 
 ### graphql playground show blank page after dev/test setup
 
-cause: Node fail or haven't established the connection with Prisma server  
-remedy: the solution is easy, either you wait and refresh or increase delay of _wait-prisma_ npm scripts in package.json
+_cause:_ Node fail or haven't established the connection with Prisma server  
+_remedy:_ the solution is easy, either you wait and refresh or increase delay of _wait-prisma_ npm scripts in package.json
 
 ## Intro
 
