@@ -1,3 +1,8 @@
+# v1.2.0
+
+- no longer include package-lock.json in template
+- update readme troublseshooting
+
 # v1.1.15
 
 - update troubleshooting

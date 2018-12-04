@@ -81,12 +81,18 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 ### graphql playground show blank page after dev/test setup
 
 **cause:** Node fail or haven't establish the connection with Prisma server  
-**remedy:** the solution is easy, either you wait and refresh or increase delay of **wait-prisma** npm scripts in package.json
+**remedy:** the solution is easy, either you wait and refresh or increase delay of **wait-prisma** npm scripts in package.json  
+**remark:** Starting from v1.2.0 I no longer include package.json in template and this shouldn't happen anymore
 
 ### bcrypt_lib.node was compiled against a different Node.js
 
-**cause:** [click here to read](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)  
-**remedy**: delete node_module and package-lock.json then npm i
+**cause:** You probably updated your Nodejs and the bcrypt binary is not compatible with it, [click here to read more](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)  
+**remedy:** delete node_module and package-lock.json then npm i
+
+### SyntaxError: Unexpected token { when running jest related npm script with mouse click
+
+**cause:** unknown  
+**remedy:** the solution is easy, **npm run jest** in console instead
 
 ## Intro
 

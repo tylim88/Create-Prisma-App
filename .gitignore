@@ -9,3 +9,4 @@ dist/
 
 # template
 template/node_modules
+template/package-lock.json
