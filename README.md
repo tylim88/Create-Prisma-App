@@ -85,7 +85,7 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 
 ### bcrypt_lib.node was compiled against a different Node.js
 
-**cause:**[cause](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)  
+**cause:** [click here to read](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)  
 **remedy**: delete node_module and package-lock.json then npm i
 
 ## Intro
