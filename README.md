@@ -83,6 +83,11 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 **cause:** Node fail or haven't establish the connection with Prisma server  
 **remedy:** the solution is easy, either you wait and refresh or increase delay of **wait-prisma** npm scripts in package.json
 
+### bcrypt_lib.node was compiled against a different Node.js
+
+**cause:**[cause](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)  
+**remedy**: delete node_module and package-lock.json then npm i
+
 ## Intro
 
 This package is aim to get you up and running in different environments, in general there are 4 types of environments:

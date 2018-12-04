@@ -1,3 +1,7 @@
+# v1.1.15
+
+- update troubleshooting
+
 # v1.1.14
 
 - update build tool .gitignore to ignore template node module
