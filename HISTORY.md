@@ -1,3 +1,7 @@
+# v1.2.2
+
+- update readme
+
 # v1.2.1
 
 - update readme

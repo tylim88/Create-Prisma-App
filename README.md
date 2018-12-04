@@ -14,7 +14,7 @@ create-prisma-app MyPrismaApp
 
 ### test environment quick start:
 
-1. in ./config.test.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
+1. in ./config.test.env, change the values of PSQL_XXXX to some database of third party(aws or heroku etc etc)
 2. Run this in console: npm run test-setup
 
 note that test-start, test-deploy and test-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
@@ -47,7 +47,7 @@ use this for the ./config.prod.env, why I didnt upload this? Because you shouldn
 
 Prod is very similar to test, so the instructions also similar:
 
-1. in ./config.prod.env, change the value of PSQL_HOST to some database of third party(aws or heroku)
+1. in ./config.prod.env, change the value of PSQL_XXXX to some database of third party(aws or heroku etc etc)
 2. Run this in console: npm run prod-setup
 
 note that prod-start, prod-deploy and prod-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
