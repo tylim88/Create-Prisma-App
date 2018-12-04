@@ -253,5 +253,4 @@ This project is inspired by the authors of existing related project
 
 ## MISC
 
-this project generator was bootstrapped with [create-npm-create](https://github.com/tylim88/create-npm-create)
-packageception 😈
+this project generator was bootstrapped with [create-npm-create](https://www.npmjs.com/package/create-npm-create) packageception 😈

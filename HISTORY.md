@@ -1,3 +1,7 @@
+# v1.1.14
+
+- update build tool .gitignore to ignore template node module
+
 # v1.1.13
 
 - housekeeping readme

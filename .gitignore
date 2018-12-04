@@ -6,3 +6,6 @@ dist/
 
 # misc
 .DS_Store
+
+# template
+template/node_modules
