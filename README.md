@@ -67,13 +67,13 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 
 ## Troubleshooting
 
-### project defualt\$default not found (mostly when running test and prod)
+### "project default\$default not found" (mostly when running test and prod)
 
 **cause:** this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection  
 **remedy:** the solution is easy, increase delay of **wait-prisma** npm scripts in package.json  
 **remark:** I will try to come up with checking mechanism in future
 
-### internal server error (mostly when running test and prod)
+### "internal server error" (mostly when running test and prod)
 
 **cause:** could be many reason  
 **remedy:** if your config is correct but still has this error, wait a while and keep trying, else google prisma internal server error
@@ -84,12 +84,12 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 **remedy:** the solution is easy, either you wait and refresh or increase delay of **wait-prisma** npm scripts in package.json  
 **remark:** Starting from v1.2.0 I no longer include package.json in template and this shouldn't happen anymore
 
-### bcrypt_lib.node was compiled against a different Node.js
+### "bcrypt_lib.node was compiled against a different Node.js"
 
 **cause:** You probably updated your Nodejs and the bcrypt binary is not compatible with it, [click here to read more](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)  
 **remedy:** delete node_module and package-lock.json then npm i
 
-### SyntaxError: Unexpected token { when running jest related npm script with mouse click
+### "SyntaxError: Unexpected token {" when running jest related npm script with mouse click
 
 **cause:** unknown  
 **remedy:** the solution is easy, **npm run jest** in console instead
