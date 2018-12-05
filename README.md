@@ -87,7 +87,7 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 
 **cause:** You probably updated your Nodejs and the bcrypt binary is not compatible with it, [click here to read more](https://stackoverflow.com/questions/46384591/node-was-compiled-against-a-different-node-js-version-using-node-module-versio)  
 **remedy:** delete node_module and package-lock.json then npm i  
-**remark:** Starting from v1.2.0 the template no longer include package.json and this shouldn't happen anymore
+**remark:** Starting from v1.2.0 the template no longer include package-lock.json and this shouldn't happen anymore
 
 ### "SyntaxError: Unexpected token {" when running jest related npm script with mouse click
 
