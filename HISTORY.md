@@ -1,3 +1,7 @@
+# v1.2.3
+
+- fix and update troubleshooting
+
 # v1.2.2
 
 - update readme
