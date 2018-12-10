@@ -43,7 +43,7 @@ PSQL_SSL=true
 COMMAND=npm run prod-start
 ```
 
-use this for the ./config.prod.env, why I didnt upload this? Because you shouldn't upload prod.env to github, even uploading test.env is already arguable.
+use this for the ./config.prod.env, why I didn't upload this? Because you shouldn't upload prod.env to github, even uploading test.env is already arguable.
 
 Prod is very similar to test, so the instructions also similar:
 
@@ -70,7 +70,7 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 ### "project default\$default not found" (mostly when running test or prod)
 
 **cause:** this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection  
-**remedy:** the solution is easy, increase delay of **wait-prisma** npm scripts in package.json  
+**remedy:** the solution is easy, increase delay of `wait-prisma` npm scripts in package.json  
 **remark:** I will try to come up with checking mechanism in future
 
 ### "internal server error" (mostly when running test or prod)
@@ -81,7 +81,7 @@ note: I am yet to polish jest logic, as you can see currently it connects to pri
 ### graphql playground show blank page after dev or test setup
 
 **cause:** Node fail or haven't establish the connection with Prisma server  
-**remedy:** the solution is easy, either you wait and refresh or increase delay of **wait-prisma** npm scripts in package.json
+**remedy:** the solution is easy, either you wait and refresh or increase delay of `wait-prisma` npm scripts in package.json
 
 ### "bcrypt_lib.node was compiled against a different Node.js"
 
