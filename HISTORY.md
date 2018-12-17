@@ -1,3 +1,12 @@
+# 1.3.0
+
+- now able to dokerize psql in all environments
+- remove unnecessary docker compose variable
+- remove unnecessary environment variable
+- now jest come with 2 mode, test and dev
+- fix jest not using NODE_PORT and NODE_ENDPOINT environment variables
+- update readme accordingly
+
 # v1.2.4
 
 - fix readme

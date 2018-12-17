@@ -31,9 +31,9 @@ test('Should expose public author profiles', async () => {
   jest.setTimeout(100000)
   const response = await client.query({ query: getUsers })
 
-  expect(response.data.users.length).toBe(2)
   expect(response.data.users[0].email).toBe(null)
   expect(response.data.users[0].name).toBe('Jen')
+  expect(response.data.users.length).toBe(2)
 })
 
 test('Should not login with bad credentials', async () => {

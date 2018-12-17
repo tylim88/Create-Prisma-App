@@ -2,7 +2,7 @@ version: '3.7'
 services:
   prisma:
     container_name: prisma
-    image: prismagraphql/prisma:1.21.0
+    image: prismagraphql/prisma:1.22.0
     restart: always
     ports:
       - '${PRISMA_PORT}:${PRISMA_PORT}'
@@ -14,22 +14,19 @@ services:
         databases:
           default:
             connector: postgres
-            host: ${PSQL_HOST}
+            host: postgres
             port: ${PSQL_PORT}
-            database: ${PSQL_DATABASE}
-            ssl: ${PSQL_SSL} 
             user: ${PSQL_USER}
             password: ${PSQL_PASSWORD}
             migrations: true
+
   postgres:
     container_name: postgres
     restart: always
-    image: postgres
+    image: postgres:10.5
     environment:
       POSTGRES_USER: ${PSQL_USER}
       POSTGRES_PASSWORD: ${PSQL_PASSWORD}
-      POSTGRES_DB: ${PSQL_DATABASE}
-      POSTGRES_HOST: ${PSQL_HOST}
     volumes:
       # if you are window user, currently it is impossible to mount psql storage to window drive, you can only use container storage https://github.com/docker/for-win/issues/445
       - postgres_volume:/var/lib/postgresql/data
