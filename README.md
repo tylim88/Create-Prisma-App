@@ -9,13 +9,11 @@ create-prisma-app MyPrismaApp
 
 ### dev environment quick start:
 
-1. Window user can skip step 1; Mac user please open ./config.dev.env, change the value of PSQL_HOST to docker.for.mac.localhost
-2. Run this in console: npm run dev-setup
+1. Run this in console: npm run dev-setup
 
 ### test environment quick start:
 
-1. in ./config.test.env, change the values of PSQL_XXXX to some database of third party(aws or heroku etc etc)
-2. Run this in console: npm run test-setup
+1. Run this in console: npm run test-setup
 
 note that test-start, test-deploy and test-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
 
@@ -34,21 +32,18 @@ NODE_ENDPOINT=http://localhost:4000
 
 # docker variable
 PRISMA_PORT=4467
-PSQL_HOST=myhost
 PSQL_PORT=5433
-PSQL_DATABASE=mydb
 PSQL_USER=user
 PSQL_PASSWORD=1234567890
-PSQL_SSL=true
 COMMAND=npm run prod-start
+DOCKER_VOLUME=postgres_prod
 ```
 
 use this for the ./config.prod.env, why I didn't upload this? Because you shouldn't upload prod.env to github, even uploading test.env is already arguable.
 
 Prod is very similar to test, so the instructions also similar:
 
-1. in ./config.prod.env, change the value of PSQL_XXXX to some database of third party(aws or heroku etc etc)
-2. Run this in console: npm run prod-setup
+1. Run this in console: npm run prod-setup
 
 note that prod-start, prod-deploy and prod-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
 
@@ -56,7 +51,7 @@ note that prod-start, prod-deploy and prod-schema automatically run in container
 
 1. in ./config/jest.env, change the value of PRISMA_ENDPOINT to match dev or test.
 
-important: do not run jest on prod prisma endpoint because jest delete database in the beginning of run!
+important: do not run jest on production prisma endpoint because jest delete database in the beginning of run!
 
 note: I am yet to polish jest logic, as you can see currently it connects to prisma endpoint not node endpoint, but you can still use it without problem. I am planning to add basic mild test for production in future.
 
