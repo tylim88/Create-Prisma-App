@@ -35,6 +35,7 @@ services:
     environment:
       POSTGRES_USER: ${PSQL_USER}
       POSTGRES_PASSWORD: ${PSQL_PASSWORD}
+      # the database name is prisma
     volumes:
       # if you are window user, currently it is impossible to mount psql storage to window drive, you can only use container storage https://github.com/docker/for-win/issues/445
       - postgres_volume:/var/lib/postgresql/data
