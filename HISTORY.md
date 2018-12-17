@@ -1,5 +1,9 @@
 # 1.3.0
 
+- add comments about database name in docker compose file
+
+# 1.3.0
+
 - now able to dokerize psql in all environments
 - remove unnecessary docker compose variable
 - remove unnecessary environment variable
