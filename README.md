@@ -19,28 +19,6 @@ note that test-start, test-deploy and test-schema automatically run in container
 
 ### prod environment quick start:
 
-```
-PRISMA_ENDPOINT=http://prisma:4467
-PRISMA_DATAMODEL=datamodel-prod.graphql
-PRISMA_SECRET=password123
-PRISMA_SCHEMA=dist/prodSchema/prisma.graphql
-CLIENT_SCHEMA=dist/prodSchema/client.graphql
-OUTPUT_FOLDER=../src/prodSchema
-JWT_SECRET=thisisasecret
-NODE_PORT=4000
-NODE_ENDPOINT=http://localhost:4000
-
-# docker variable
-PRISMA_PORT=4467
-PSQL_PORT=5433
-PSQL_USER=user
-PSQL_PASSWORD=1234567890
-COMMAND=npm run prod-start
-DOCKER_VOLUME=postgres_prod
-```
-
-use this for the ./config.prod.env, why I didn't upload this? Because you shouldn't upload prod.env to github, even uploading test.env is already arguable.
-
 Prod is very similar to test, so the instructions also similar:
 
 1. Run this in console: npm run prod-setup

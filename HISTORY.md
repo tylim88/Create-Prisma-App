@@ -1,4 +1,9 @@
-# 1.3.0
+# 1.3.2
+
+- enable management key in docker compose and env file
+- update readme
+
+# 1.3.1
 
 - add comments about database name in docker compose file
 
