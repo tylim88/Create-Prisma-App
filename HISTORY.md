@@ -1,3 +1,7 @@
+# 1.3.5
+
+- update readme
+
 # 1.3.4
 
 - now also generate schema test and prod schema outside of docker, this will fix test-jest fail issue
