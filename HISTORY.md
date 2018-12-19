@@ -1,3 +1,7 @@
+# 1.3.3
+
+- fix bug in jest-dev utilizing wrong schema
+
 # 1.3.2
 
 - enable management key in docker compose and env file
