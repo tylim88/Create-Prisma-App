@@ -81,7 +81,7 @@ This package is aim to get you up and running in different environments, in gene
    Ideally the test environment should be as similar as prod environment as possible so that we can expect the same behavior when we deploy it, do not confuse this with jest.
 
 4. jest(jest.env)  
-   Do not confuse this with test, jest has its own environment variables that points to test environment from outside world, in short jest are interaction from real world upon this dev and test environment.
+   Do not confuse this with test, jest has its own environment variables that points to test environment from outside world, in short jest are interaction from real world upon this dev, test and ci environment.
 
 To summarize it:
 
@@ -90,7 +90,7 @@ To summarize it:
 | dev         | dockerized locally                     | local                                  | dockerized locally | for fast development                                          |
 | prod        | dockerized in prod server 1            | dockerized in prod server 1            | prod server 2      | for easy deployment in production                             |
 | test        | dockerized locally or in test server 1 | dockerized locally or in test server 1 | test server 2      | to mimic production environment with free to torture database |
-| jest        | none                                   | none                                   | none               | to interact with dev/test environment                         |
+| jest        | none                                   | none                                   | none               | to interact with dev/test/ci environment                      |
 
 **NOTE: you dont need to always follow this architecure, if you want to change it, simply modify the docker(compose) file and change the .env variable accordingly**
 
@@ -181,7 +181,7 @@ Here is doc for scripts,
 | jest                        | ------------------------------------------------------------------jest---------------------------------------------------------------------------------------                      | jest                                                                                                                |
 | jest-dev                    | env-cmd ./.config/jest_dev.env jest --watch --runInBand                                                                                                                            | build, watch for the change and run the jest in sequence with dev config                                            |
 | jest-test                   | env-cmd ./.config/jest_test.env jest --runInBand                                                                                                                                   | build and run the jest in sequence with test config                                                                 |
-| jest-ci                     | env-cmd ./.config/jest.env jest --runInBand                                                                                                                                        | build and run the jest in sequence                                                                                  |
+| jest-ci                     | env-cmd ./.config/jest_ci.env jest --runInBand                                                                                                                                     | build and run the jest in sequence                                                                                  |
 | prod                        | -------------------------------------------------------------------prod---------------------------------------------------------------------------------------                     | prod                                                                                                                |
 | prod-setup                  | npm run prod-schema && npm run prod-volume && npm run prod-build && npm run prod-up && Node ./terminalString/mprod.js                                                              | generate schema, create docker volume, build and orchestrate containers                                             |
 | prod-start\*                | npm run wait-Prisma && npm run prod-deploy && env-cmd ./.config/prod.env npm run start                                                                                             | deploy and generate schema, start Node                                                                              |

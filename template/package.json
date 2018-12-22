@@ -24,7 +24,7 @@
     "separator-1": "-----------------------------------------------------jest------------------------------------------------------------------------",
     "jest-dev": "npm run build && env-cmd ./.config/jest_dev.env jest --watch --runInBand",
     "jest-test": "npm run build && env-cmd ./.config/jest_test.env jest --runInBand",
-    "jest-ci": "npm run build && env-cmd ./.config/jest.env jest --runInBand",
+    "jest-ci": "npm run build && env-cmd ./.config/jest_ci.env jest --runInBand",
     "separator-2": "-----------------------------------------------------prod------------------------------------------------------------------------",
     "prod-setup": "npm run prod-schema && npm run prod-volume && npm run prod-build && npm run prod-up && node ./terminalString/mprod.js",
     "prod-start": "npm run wait-prisma && npm run prod-deploy && env-cmd ./.config/prod.env npm run start",

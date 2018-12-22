@@ -1,3 +1,7 @@
+# 1.3.6
+
+- add jest_ci.env
+
 # 1.3.5
 
 - update readme
