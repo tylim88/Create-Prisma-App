@@ -1,6 +1,6 @@
 # 1.3.9
 
-- dev setup now start with nodemon
+- (template)dev setup now start with nodemon
 
 # 1.3.8
 
