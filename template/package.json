@@ -50,7 +50,7 @@
     "test-tail": "env-cmd ./.config/test.env npm run tail",
     "test-down": "env-cmd ./.config/test.env npm run down",
     "separator-4": "-------------------------------------------------------dev-------------------------------------------------------------------------",
-    "dev-setup": "npm run dev-volume && npm run dev-build && npm run dev-up && cross-env-shell \"sleep 10\" && npm run dev-deploy && concurrently \"npm run dev-start\" \"npm run dev-browse\"",
+    "dev-setup": "npm run dev-volume && npm run dev-build && npm run dev-up && cross-env-shell \"sleep 10\" && npm run dev-deploy && concurrently \"npm run dev-nodemon\" \"npm run dev-browse\"",
     "dev-ready": "concurrently \"npm run dev-up\" \"npm run dev-start\" \"npm run dev-browse\"",
     "dev-start": "env-cmd ./.config/dev.env npm start",
     "dev-browse": "cross-env-shell \"sleep 3\" && node ./terminalString/mdev.js && cross-env-shell \"sleep 5\" && env-cmd ./.config/dev.env npm run playground",

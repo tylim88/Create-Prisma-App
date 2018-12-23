@@ -1,3 +1,7 @@
+# 1.3.9
+
+- dev setup now start with nodemon
+
 # 1.3.8
 
 - increase delay before deploying schema to 10 seconds
