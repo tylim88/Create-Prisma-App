@@ -1,3 +1,7 @@
+# 1.3.8
+
+- increase delay before deploying schema to 10 seconds
+
 # 1.3.7
 
 - (template)no longer update any config to github
