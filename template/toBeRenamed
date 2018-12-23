@@ -2,7 +2,7 @@
 node_modules/
 
 # environment
-.config/prod.env
+.config
 
 # production
 dist/

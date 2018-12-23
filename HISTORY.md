@@ -1,3 +1,7 @@
+# 1.3.7
+
+- (template)no longer update any config to github
+
 # 1.3.6
 
 - add jest_ci.env
