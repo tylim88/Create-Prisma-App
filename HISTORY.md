@@ -1,3 +1,7 @@
+# v1.4.1
+
+- update readme
+
 # 1.4.0
 
 -(template)switch bcrypt to bcryptjs to make life easier
