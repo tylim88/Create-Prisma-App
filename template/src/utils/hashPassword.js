@@ -1,4 +1,4 @@
-import bcrypt from 'bcrypt'
+import bcrypt from 'bcryptjs'
 
 const hashPassword = (password) => {
   if (password.length < 8) {

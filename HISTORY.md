@@ -1,3 +1,7 @@
+# 1.4.0
+
+-(template)switch bcrypt to bcryptjs to make life easier
+
 # 1.3.9
 
 - (template)dev setup now start with nodemon

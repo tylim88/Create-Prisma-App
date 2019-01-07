@@ -75,7 +75,7 @@
     "apollo-link-http": "^1.5.5",
     "apollo-link-ws": "^1.0.9",
     "apollo-utilities": "^1.0.25",
-    "bcrypt": "^3.0.2",
+    "bcryptjs": "^2.4.3",
     "graphql": "^0.13.2",
     "graphql-yoga": "^1.16.7",
     "jsonwebtoken": "^8.4.0",
