@@ -7,6 +7,8 @@ npm i -g create-prisma-app
 create-prisma-app MyPrismaApp
 ```
 
+You also need Docker v18.06 and above
+
 ### dev environment quick start:
 
 1. Run this in console: npm run dev-setup
@@ -111,7 +113,7 @@ Prerequisite knowledge:
 
 What you need to have:
 
-1. Docker
+1. Docker v18.06 and above
 2. Kitematic(optional): Docker GUI\*
 3. TeamSQL(optional): SQL database GUI\*
 

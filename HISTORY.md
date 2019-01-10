@@ -1,3 +1,7 @@
+# v1.4.2
+
+- update readme
+
 # v1.4.1
 
 - update readme
