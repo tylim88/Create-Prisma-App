@@ -1,3 +1,7 @@
+# v1.5.0
+
+- update according to prisma v1.28 breaking change https://github.com/prisma/prisma/issues/3359#issuecomment-465934053
+
 # v1.4.2
 
 - update readme
