@@ -1,10 +1,21 @@
 # Create Prisma App
 
+## Important
+
+Primsa v1.28 is breaking change and this app v1.5.0 is intend to fit the change
+details: https://github.com/prisma/prisma/issues/3359#issuecomment-465934053
+
 ## Installation:
 
 ```
 npm i -g create-prisma-app
 create-prisma-app MyPrismaApp
+```
+
+or
+
+```
+npx create-prisma-app MyPrismaApp
 ```
 
 You also need Docker v18.06 and above
