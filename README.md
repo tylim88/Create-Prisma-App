@@ -2,7 +2,8 @@
 
 ## Important
 
-Primsa v1.28 is breaking change and this template v1.5.0 is intended to fit the change  
+Prisma v1.28 is breaking change and this template v1.5.0 is intended to fit the change
+
 details: https://github.com/prisma/prisma/issues/3359#issuecomment-465934053
 
 ## Installation:
