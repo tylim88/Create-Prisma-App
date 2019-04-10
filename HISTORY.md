@@ -1,3 +1,7 @@
+# v1.5.2
+
+-remove outdated troubleshooting guide in readme
+
 # v1.5.1
 
 -update read me
