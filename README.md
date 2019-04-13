@@ -232,9 +232,17 @@ Here is doc for scripts,
 
 \*automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
 
-## Work in Progress
+## Tips & Star
 
-jest environment
+consider star or tipping me if you found this template helpful, and wish to see more rapid development 😄
+
+BTC: 1KbpCqzZ6FSfoi1R9obGEVXRHpbJMQQCda  
+ETH: 0x4DfD790D98F8f3E013E70da51E70B60b953c7e61  
+LTC: LXVYLpe9zQ48aGCuBqjLW8xxaBfVBauXST  
+XRP: rnftUYRq91TBL6ceK5y3UnFiYBLQMFkZn6  
+ADA: Ae2tdPwUPEYxapgJjg9qpg1RhyfBq5vx6ZdWXafNqZihg4rCD7baXhMf7CH  
+BNB: 0x4DfD790D98F8f3E013E70da51E70B60b953c7e61  
+paypal: paypal.me/tylim88
 
 ## Acknowledgement
 
