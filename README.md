@@ -46,8 +46,8 @@ then `Ctrl + C` to terminate Node in terminal
 start:
 
 ```bash
-npm run test-setup // for first time only (run this again for different docker file setting)
-npm run test-start // ⚡ for 2nd time and above, do not run test-setup then test-start
+npm run test-setup # for first time only (run this again for different docker file setting)
+npm run test-start #⚡ for 2nd time and above, do not run test-setup then test-start
 ```
 
 shut down:
@@ -65,8 +65,8 @@ Prod is very similar to test, so the instructions also similar:
 start:
 
 ```bash
-npm run prod-setup // first time only (run this again for different docker file setting)
-npm run prod-start // ⚡️ for 2nd time and above, do not run prod-setup then prod-start
+npm run prod-setup # first time only (run this again for different docker file setting)
+npm run prod-start # ⚡️ for 2nd time and above, do not run prod-setup then prod-start
 ```
 
 shut down:
