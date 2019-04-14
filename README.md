@@ -1,10 +1,10 @@
 # Create Prisma App
 
-✨ Setup environments sophisticated Prisma back end in just one command!
+✨ Setup environments sophisticated [Prisma](https://github.com/prisma/prisma) back end in just one command!
 
 ## Important
 
-Prisma v1.28 is [breaking change]('https://github.com/prisma/prisma/issues/3359#issuecomment-465934053) and this template v1.5.0 is intended to accommodate the change
+⚠️ [Breaking change](https://github.com/prisma/prisma/issues/3359#issuecomment-465934053) in Prisma v1.28 and this template `v1.5.0 +` is intended to accommodate the change
 
 ## Installation
 
@@ -13,13 +13,13 @@ npm i -g create-prisma-app
 create-prisma-app MyPrismaApp
 ```
 
-or
+OR
 
 ```bash
 npx create-prisma-app MyPrismaApp
 ```
 
-🐝 If your docker unable to run this package then you may need Docker `v18.06` and above
+🐝 If your docker unable to run this package then you may need Docker `v18.06 +`.
 
 ## Quick Start
 
@@ -56,7 +56,7 @@ shut down:
 npm run test-down
 ```
 
-🚩test-start, test-deploy and test-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
+🚩 `test-start`, `test-deploy` and `test-schema` automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
 
 ### Prod Environment Quick Start
 
@@ -75,15 +75,15 @@ shut down:
 npm run prod-down
 ```
 
-🚩prod start, prod-deploy and prod-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
+🚩 `prod start`, `prod-deploy` and `prod-schema` automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
 
 ### Jest Environment Quick Start
 
 1. in `./.config/jest.env`, change the value of `PRISMA_ENDPOINT` to match dev or test.
 
-🐠Jest run on Prisma endpoint not Node endpoint
+🐠 Jest run on Prisma endpoint not Node endpoint
 
-⚠️**important: do not run jest on production because jest delete database in the beginning of run, that is why there is no `jest-prod` config file!**
+⚠️ **important: do not run jest on production because jest delete database in the beginning of run, that is why there is no `jest-prod` config file!**
 
 ### Configuration
 
@@ -104,7 +104,7 @@ The scripts may look overwhelming, but it is actually repetitive in pattern, wha
 
 👿 mostly when running test or prod, this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection.  
 😇 the solution is easy, increase delay of `wait-prisma` scripts in `package.json`.  
-👷 I will try to come up with checking mechanism in future.
+👷 will add checking mechanism in future.
 
 ### "Internal Server Error"
 
@@ -129,7 +129,7 @@ This package is aim to get you up and running in different environments, in gene
    Ideally dev is an environment that allow us to code and experimenting our thing even without internet. It is an environment that we can carry on planning and creating without relying third party service such as server on AWS, instead we should have a server that we can toy with anytime in our computer.
 
 2. prod(prod.env)
-   Prod is the environment where we want to treat our data, data model and configuration delicately. Imagine if we accidentally deploy our dev data and configuration into prod, that would be hell unleashed.For some cases we can mix up test and dev environments and that is tolerable, but production environment MUST has it own space, this is not an option.
+   Prod is the environment where we want to treat our data, data model and configuration delicately. Imagine if we accidentally deploy our dev data and configuration into prod, that would be hell unleashed.For some cases we can mix up test and dev environments and that is tolerable, but production environment must has it own space.
 
 3. test(test.env)
    Ideally the test environment should be as similar as prod environment as possible so that we can expect the same behavior when we deploy it, do not confuse this with jest.
@@ -146,11 +146,11 @@ To summarize it:
 | test        | dockerized locally or in test server 1 | dockerized locally or in test server 1 | test server 2      | to mimic production environment with free to torture database |
 | jest        | none                                   | none                                   | none               | to interact with dev/test/ci environment                      |
 
-✈️**You can always change the architecure, simply modify the `docker(compose)` files and change the variables in `./.config` accordingly**
+✈️ **You can always change the architecure, simply modify the `docker(compose)` files and change the variables in `./.config` accordingly**
 
-Docker refuses to add a key that allows user chooses to run a service or not because the developers want to uphold some silly engineering principle even though it is a highly requested [feature]('https://github.com/docker/compose/issues/1896').
+Docker refuses to add a key that allows user chooses to run a service or not even though it is a highly requested [feature]('https://github.com/docker/compose/issues/1896').
 
-The implication is we unable to share the same `docker-compose` file for all modes, especially dev mode because dev mode run Node outside docker.
+The implication is we are unable to share the same `docker-compose` file for all modes, especially dev mode because dev mode run Node outside docker.
 
 I have no choice but to create a separated docker yml file for dev. Yes we can use `--scale service=0` command, but that doesn't stop docker wasting time building the service and building Node every time user run dev mode.
 
@@ -158,27 +158,28 @@ I have no choice but to create a separated docker yml file for dev. Yes we can u
 
 Knowledge:
 
-1. Graphql
-2. Prisma
+1. [Graphql](https://graphql.org/)
+2. [Prisma](https://github.com/prisma/prisma)
 
 Tools:
 
-1. Docker v18.06 and above
-2. Kitematic(optional): Docker GUI 🚲
-3. DBeaver(optional): SQL database GUI 🚲
+1. [Docker](https://www.docker.com/)
+2. [Kitematic](https://kitematic.com/)(optional): Docker GUI 🚲
+3. [DBeaver](https://github.com/dbeaver/dbeaver)(optional): SQL database GUI 🚲
 
 🚲 With or without Kitematic and DBeaver, we still able to get the app running, but I recommend them because they are very useful especially DBeaver.
 
 ## Extra Benefits
 
 1. commit hooked prettier styling
-2. Babel env preset, write ES6 right away!
+2. Babel env preset, write ES6️⃣ right away!
 3. basic data model
 4. basic schema
 5. basic api call
-6. basic test
+6. basic Jest test
 7. basic CircleCI configuration file
 8. basic JWT authentication
+9. modularity, replace any dependency you want.
 
 ## Documentation
 

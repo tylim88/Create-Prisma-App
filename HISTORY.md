@@ -2,6 +2,10 @@
 
 Change log
 
+## 1.5.10
+
+- update readme
+
 ## 1.5.9
 
 - add readme troubleshoot guide
