@@ -46,8 +46,8 @@ then `Ctrl + C` to terminate Node in terminal
 start:
 
 ```bash
-npm run test-setup # for first time only (run this again for different docker file setting)
-npm run test-start #⚡ for 2nd time and above, do not run test-setup then test-start
+npm run test-setup # for 1st time only (run this again for different docker file setting)
+npm run test-up #⚡ for 2nd time and above(do not run test-up soon after test-setup, it is unnecessary)
 ```
 
 shut down:
@@ -65,8 +65,8 @@ Prod is very similar to test, so the instructions also similar:
 start:
 
 ```bash
-npm run prod-setup # first time only (run this again for different docker file setting)
-npm run prod-start # ⚡️ for 2nd time and above, do not run prod-setup then prod-start
+npm run prod-setup # 1st time only (run this again for different docker file setting)
+npm run prod-up # ⚡️ for 2nd time and above(do not run prod-up soon after prod-setup, it is unnecessary)
 ```
 
 shut down:
@@ -75,7 +75,7 @@ shut down:
 npm run prod-down
 ```
 
-🚩prod-deploy and prod-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
+🚩prod start, prod-deploy and prod-schema automatically run in container and doesn't work outside the of the container(remember unlike dev environment, test and prod Node is running in container)
 
 ### Jest Environment Quick Start
 
