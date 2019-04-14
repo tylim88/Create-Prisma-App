@@ -2,6 +2,10 @@
 
 Change log
 
+## 1.5.9
+
+- add readme troubleshoot guide
+
 ## 1.5.8
 
 - fix wrong command in readme

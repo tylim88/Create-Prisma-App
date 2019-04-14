@@ -95,6 +95,11 @@ The scripts may look overwhelming, but it is actually repetitive in pattern, wha
 
 ## Troubleshooting
 
+### Unexpected End of JSON Input During Installation
+
+👿 npm cache [corrupted](https://stackoverflow.com/questions/47675478/npm-install-errorunexpected-end-of-json-input-while-parsing-near-nt-webpack)
+😇 run `npm cache clean --force` to fix it
+
 ### "Project default\$default Not Found"
 
 👿 mostly when running test or prod, this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection.  
