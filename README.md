@@ -97,24 +97,24 @@ The scripts may look overwhelming, but it is actually repetitive in pattern, wha
 
 ### "Project default\$default Not Found"
 
-**cause:** mostly when running test or prod, this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection
-**remedy:** the solution is easy, increase delay of `wait-prisma` scripts in `package.json`.
-**remark:** I will try to come up with checking mechanism in future
+👿 mostly when running test or prod, this is due to Node server is ready before Prisma server and fail to deploy schema, this happen if your server is sleeping and prisma need time to establish connection.  
+😇 the solution is easy, increase delay of `wait-prisma` scripts in `package.json`.  
+👷 I will try to come up with checking mechanism in future.
 
 ### "Internal Server Error"
 
-**cause:** mostly when running test or prod, could be many reason, most possible reason is Node unable to connect with Prima due to .env variables misconfiguration.
-**remedy:** if your config is correct but has this error, wait a while and keep trying; if not check your .env variables configuration.
+👿 mostly when running test or prod, could be many reason, most possible reason is Node unable to connect with Prima due to .env variables misconfiguration.  
+😇 if your config is correct but has this error, wait a while and keep trying; if not check your .env variables configuration.
 
 ### Graphql Playground Shows Blank Page After dev or test Setup
 
-**cause:** Node fail or haven't establish the connection with Prisma server
-**remedy:** the solution is easy, just wait and refresh the page **or** increase delay of `wait-prisma` npm scripts in `package.json`.
+👿 Node fail or haven't establish the connection with Prisma server  
+😇 the solution is easy, just wait and refresh the page **or** increase delay of `wait-prisma` npm scripts in `package.json`.
 
 ### Port is Already Allocated Error
 
-**cause:** it is most likely you have another postgres installed and running with 5433 port
-**remedy:** change `PSQL_PORT` variable in `./.config/xxx.env`, xxx is dev or test or prod
+👿 it is most likely you have another postgres installed and running with 5433 port.  
+😇 change `PSQL_PORT` variable in `./.config/xxx.env`, xxx is dev or test or prod.
 
 ## Architecture
 
@@ -262,22 +262,22 @@ Here is doc for scripts:
 
 😄 Consider star or tipping me if you found this template helpful, and wish to see more rapid development.
 
-BTC: 1KbpCqzZ6FSfoi1R9obGEVXRHpbJMQQCda  
-ETH: 0x4DfD790D98F8f3E013E70da51E70B60b953c7e61  
-LTC: LXVYLpe9zQ48aGCuBqjLW8xxaBfVBauXST  
-XRP: rnftUYRq91TBL6ceK5y3UnFiYBLQMFkZn6  
-ADA: Ae2tdPwUPEYxapgJjg9qpg1RhyfBq5vx6ZdWXafNqZihg4rCD7baXhMf7CH  
-BNB: 0x4DfD790D98F8f3E013E70da51E70B60b953c7e61  
-paypal: paypal.me/tylim88
+BTC: `1KbpCqzZ6FSfoi1R9obGEVXRHpbJMQQCda`  
+ETH: `0x4DfD790D98F8f3E013E70da51E70B60b953c7e61`  
+LTC: `LXVYLpe9zQ48aGCuBqjLW8xxaBfVBauXST`  
+XRP: `rnftUYRq91TBL6ceK5y3UnFiYBLQMFkZn6`  
+ADA: `Ae2tdPwUPEYxapgJjg9qpg1RhyfBq5vx6ZdWXafNqZihg4rCD7baXhMf7CH`  
+BNB: `0x4DfD790D98F8f3E013E70da51E70B60b953c7e61`  
+[PayPal](https://www.paypal.me/tylim88)
 
 ## Acknowledgement
 
 This project is inspired by the authors of existing related project
 
-\_[graphql-boilerplate](https://github.com/andrewjmead/graphql-boilerplate)
+- [graphql-boilerplate](https://github.com/andrewjmead/graphql-boilerplate)
 
-\_[create-next-app](https://github.com/segmentio/create-next-app)
+- [create-next-app](https://github.com/segmentio/create-next-app)
 
 ## MISC
 
-this project generator was bootstrapped with [create-npm-create](https://www.npmjs.com/package/create-npm-create) packageception 😈
+🌟 this project generator was bootstrapped with [create-npm-create](https://www.npmjs.com/package/create-npm-create) packageception
