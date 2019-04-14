@@ -1,0 +1,18 @@
+# dependencies
+node_modules/
+
+# production
+dist/
+
+# misc
+.DS_Store
+.github/
+.gitignore
+.npmignore
+HISTORY.md
+package-lock.json
+
+# template
+template/node_modules
+template/package-lock.json
+template/dist
