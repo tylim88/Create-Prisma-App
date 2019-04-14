@@ -1,6 +1,6 @@
 # Create Prisma App
 
-Setup environments sophisticated Prisma back end in just one command!
+✨ Setup environments sophisticated Prisma back end in just one command!
 
 ## Important
 

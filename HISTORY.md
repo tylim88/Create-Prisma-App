@@ -2,6 +2,10 @@
 
 Change log
 
+## 1.5.6
+
+- update readme
+
 ## 1.5.5
 
 - update readme
