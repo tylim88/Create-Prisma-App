@@ -1,6 +1,6 @@
 {
   "name": "create-prisma-app",
-  "version": "1.5.10",
+  "version": "1.5.11",
   "description": "create-prisma-app",
   "author": "tylim",
   "license": "MIT",
@@ -15,7 +15,6 @@
     "prisma",
     "graphql",
     "yoga",
-    "create-prisma-app",
     "boilerplate",
     "server",
     "backend",

@@ -2,6 +2,10 @@
 
 Change log
 
+## 1.5.11
+
+- fix readme typo
+
 ## 1.5.10
 
 - update readme

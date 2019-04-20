@@ -4,7 +4,7 @@
 
 ## Important
 
-⚠️ [Breaking change](https://github.com/prisma/prisma/issues/3359#issuecomment-465934053) in Prisma v1.28 and this template `v1.5.0 +` is intended to accommodate the change
+⚠️ [Breaking change](https://github.com/prisma/prisma/issues/3359#issuecomment-465934053) in `Prisma v1.28` and this template `v1.5.0 +` is intended to accommodate the change
 
 ## Installation
 
@@ -97,7 +97,7 @@ The scripts may look overwhelming, but it is actually repetitive in pattern, wha
 
 ### Unexpected End of JSON Input During Installation
 
-👿 npm cache [corrupted](https://stackoverflow.com/questions/47675478/npm-install-errorunexpected-end-of-json-input-while-parsing-near-nt-webpack)
+👿 npm cache [corrupted](https://stackoverflow.com/questions/47675478/npm-install-errorunexpected-end-of-json-input-while-parsing-near-nt-webpack)  
 😇 run `npm cache clean --force` to fix it
 
 ### "Project default\$default Not Found"
@@ -118,7 +118,7 @@ The scripts may look overwhelming, but it is actually repetitive in pattern, wha
 
 ### Port is Already Allocated Error
 
-👿 it is most likely you have another postgres installed and running with 5433 port.  
+👿 it is most likely you have another program like postgres installed and running with 5433 port.  
 😇 change `PSQL_PORT` variable in `./.config/xxx.env`, xxx is dev or test or prod.
 
 ## Architecture
